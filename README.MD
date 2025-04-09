@@ -1,3 +1,10 @@
+EXECUTANDO O PROGRAMA
+
+Para executar o programa baixe a a pasta "next_version"
+e utilize o atalho "main"
+
+-----------------------------------------
+
 Ativando o ambiente virtual
 
 .\virtualEnv\Scripts\Activate.ps1
