@@ -17,11 +17,11 @@ padY = 10
 padX = 5   
 
 data = {
-        'MOTORISTAS'         : [],
-        'CHEGADA EADI'       : [],
-        'SAIDA EADI'         : [],
-        'CHEGADA BRIDGESTONE': [],
-        'SAIDA BRIDGESTONE'  : []
+        'NOME MOTORISTA'      : [],
+        'CHEGADA CARREGAMENTO': [],
+        'SAIDA CARREGAMENTO'  : [],
+        'CHEGADA DESCARGA'    : [],
+        'SAIDA DESCARGA'      : []
     }
 
 db_config = {

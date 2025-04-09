@@ -10,6 +10,25 @@ Instalação das bibliotecas
 
 pip install nome_da_biblioteca
 
+-----------------------------------------
+
+lista de comandos do GIT
+
+git config
+
+git status
+
+git add .
+
+git commit -m "Descrição do commit"
+
+git push
+
+git clone {url do repositorio}
+
+-----------------------------------------
+
+
 VIDEOS
 
 CUSTOMTKINTER: 

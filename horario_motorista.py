@@ -4,11 +4,11 @@ from openpyxl.styles import Font, Alignment, PatternFill
 from instasces import *
 from tkinter import *
 
-class BridgestoneWindow:
+class horario_motorista:
         def __init__(self):
 
             self.window = Tk()
-            self.window.title('WS - Bridgestone') 
+            self.window.title('HR - Motorista') 
             self.window.iconbitmap(iconImage)
             self.window.resizable(False, False)
 
@@ -16,35 +16,35 @@ class BridgestoneWindow:
             self.word_init['font'] = fontText
             self.word_init.grid(column = 0, columnspan= 1, row = 0, padx= padX, pady= padY)
 
-            self.inputLabel = Label(self.window, text='MOTORISTA', bg= backgroundcolorFont)
+            self.inputLabel = Label(self.window, text='NOME MOTORISTA', bg= backgroundcolorFont)
             self.inputLabel['font'] = fontText
             self.inputLabel.grid(column= 0, row= 3)
 
             self.inputValue = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue.grid(column= 0, row= 4)
 
-            self.inputLabel2 = Label(self.window, text= 'CHEGADA EADI',  bg= backgroundcolorFont)
+            self.inputLabel2 = Label(self.window, text= 'CHEGADA CARREGAMENTO',  bg= backgroundcolorFont)
             self.inputLabel2['font'] = fontText
             self.inputLabel2.grid(column= 0, row= 5)
 
             self.inputValue2 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue2.grid(column= 0, row= 6)
 
-            self.inputLabel3 = Label(self.window, text= 'SAIDA EADI', bg= backgroundcolorFont)
+            self.inputLabel3 = Label(self.window, text= 'SAIDA CARREGAMENTO', bg= backgroundcolorFont)
             self.inputLabel3['font'] = fontText
             self.inputLabel3.grid(column= 0, row= 7)
 
             self.inputValue3 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue3.grid(column= 0, row= 8)
 
-            self.inputLabel4 = Label(self.window, text= 'CHEGADA BRIDGESTONE', bg= backgroundcolorFont)
+            self.inputLabel4 = Label(self.window, text= 'CHEGADA DESCARGA', bg= backgroundcolorFont)
             self.inputLabel4['font'] = fontText
             self.inputLabel4.grid(column= 0, row= 9)
 
             self.inputValue4 = Entry(self.window, bd= border, bg= backgroundcolorWidget,  width= entryWidth)
             self.inputValue4.grid(column= 0, row= 10)
 
-            self.inputLabel5 = Label(self.window, text= 'SAIDA BRIDGESTONE', bg= backgroundcolorFont)
+            self.inputLabel5 = Label(self.window, text= 'SAIDA DESCARGA', bg= backgroundcolorFont)
             self.inputLabel5['font'] = fontText
             self.inputLabel5.grid(column= 0, row= 11)
 
@@ -68,31 +68,31 @@ class BridgestoneWindow:
             self.window.mainloop()
 
         def clearDataBase(self):
-            cd1 = list(data['MOTORISTAS'])
-            cd2 = list(data['CHEGADA EADI'])
-            cd3 = list(data['SAIDA EADI'])
-            cd4 = list(data['CHEGADA BRIDGESTONE'])
-            cd5 = list(data['SAIDA BRIDGESTONE'])
+            cd1 = list(data['NOME MOTORISTA'])
+            cd2 = list(data['CHEGADA CARREGAMENTO'])
+            cd3 = list(data['SAIDA CARREGAMENTO'])
+            cd4 = list(data['CHEGADA DESCARGA'])
+            cd5 = list(data['SAIDA DESCARGA'])
 
-            if len(data['MOTORISTAS']) != 0:
+            if len(data['NOME MOTORISTA']) != 0:
                 for self.numberFrame in cd1:
-                    data['MOTORISTAS'].pop()
+                    data['NOME MOTORISTA'].pop()
 
-            if len(data['CHEGADA EADI']) != 0:
+            if len(data['CHEGADA CARREGAMENTO']) != 0:
                 for self.numberFrame in cd2:
-                    data['CHEGADA EADI'].pop()
+                    data['CHEGADA CARREGAMENTO'].pop()
 
-            if len(data['SAIDA EADI']) != 0:
+            if len(data['SAIDA CARREGAMENTO']) != 0:
                 for self.numberFrame in cd3:
-                    data['SAIDA EADI'].pop()
+                    data['SAIDA CARREGAMENTO'].pop()
 
-            if len(data['CHEGADA BRIDGESTONE']) != 0:
+            if len(data['CHEGADA DESCARGA']) != 0:
                 for self.numberFrame in cd4:
-                    data['CHEGADA BRIDGESTONE'].pop()
+                    data['CHEGADA DESCARGA'].pop()
 
-            if len(data['SAIDA BRIDGESTONE']) != 0:
+            if len(data['SAIDA DESCARGA']) != 0:
                 for self.numberFrame in cd5:
-                    data['SAIDA BRIDGESTONE'].pop()
+                    data['SAIDA DESCARGA'].pop()
 
         def saveSheetInDirectory(self,file):
             directorySave = askdirectory(title='Selecione onde deseja salvar o arquivo')
@@ -104,16 +104,16 @@ class BridgestoneWindow:
                 self.end_word['text'] = 'Selecione uma pasta para salvar o arquivo'
 
         def creatSheet(self):
-            cs1 = len(data['MOTORISTAS'])
-            cs2 = len(data['CHEGADA EADI'])
-            cs3 = len(data['SAIDA EADI'])
-            cs4 = len(data['CHEGADA BRIDGESTONE'])
-            cs5 = len(data['SAIDA BRIDGESTONE'])
+            cs1 = len(data['NOME MOTORISTA'])
+            cs2 = len(data['CHEGADA CARREGAMENTO'])
+            cs3 = len(data['SAIDA CARREGAMENTO'])
+            cs4 = len(data['CHEGADA DESCARGA'])
+            cs5 = len(data['SAIDA DESCARGA'])
  
             if cs1 and cs2 and cs3 and cs4 and cs5 != 0:
                 file = Workbook()
                 sheet = file.active
-                sheet.title = 'OP WILSON SONS'
+                sheet.title = 'OP TRANSPORTE'
 
                 names_column = list(data.keys())
 
@@ -143,35 +143,35 @@ class BridgestoneWindow:
             self.text_insert = 'Insira as Informações'
 
             if self.inputValue.get() != '':
-                data['MOTORISTAS'].append(self.inputValue.get())
+                data['NOME MOTORISTA'].append(self.inputValue.get())
                 self.inputValue.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue2.get() != '':
-                data['CHEGADA EADI'].append(self.inputValue2.get())
+                data['CHEGADA CARREGAMENTO'].append(self.inputValue2.get())
                 self.inputValue2.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue3.get() != '':
-                data['SAIDA EADI'].append(self.inputValue3.get())
+                data['SAIDA CARREGAMENTO'].append(self.inputValue3.get())
                 self.inputValue3.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue4.get() != '':
-                data['CHEGADA BRIDGESTONE'].append(self.inputValue4.get())
+                data['CHEGADA DESCARGA'].append(self.inputValue4.get())
                 self.inputValue4.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue5.get() != '':
-                data['SAIDA BRIDGESTONE'].append(self.inputValue5.get())
+                data['SAIDA DESCARGA'].append(self.inputValue5.get())
                 self.inputValue5.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
