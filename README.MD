@@ -1,3 +1,10 @@
+EXECUTANDO O PROGRAMA
+
+Para executar o programa baixe a a pasta "next_version"
+e utilize o atalho "main"
+
+-----------------------------------------
+
 Ativando o ambiente virtual
 
 .\virtualEnv\Scripts\Activate.ps1
@@ -9,6 +16,14 @@ deactivate
 Instalação das bibliotecas
 
 pip install nome_da_biblioteca
+
+-----------------------------------------
+
+pyinstaller --windowed nome do arquivo com extenção
+
+pyinstaller --onefile -w nome do arquivo com extenção {para programas com janelas}
+
+pyinstaller --onefile nome do arquivo com extenção {para programas cmd}
 
 -----------------------------------------
 
