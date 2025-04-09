@@ -1,6 +1,6 @@
 EXECUTANDO O PROGRAMA
 
-Para executar o programa baixe a a pasta "next_version"
+Para executar o programa baixe a a pasta "next_version" localizada em "compilados"
 e utilize o atalho "main"
 
 -----------------------------------------
