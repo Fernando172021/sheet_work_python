@@ -45,6 +45,8 @@ git branch
 
 git branch nome da ramificação
 
+git branch -d nome da raamificação
+
 git checkout nome da ramificação
 
 git log --oneline
