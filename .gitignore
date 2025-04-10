@@ -1,0 +1,9 @@
+# Ignorar arquivos temporários do sistema
+*.tmp
+*.log
+
+# Ignorar arquivos de configuração locais
+config.local.json
+
+# Ignorar diretórios específicos
+/__pycache__/
