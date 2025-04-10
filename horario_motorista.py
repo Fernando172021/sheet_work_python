@@ -16,35 +16,35 @@ class horario_motorista:
             self.word_init['font'] = fontText
             self.word_init.grid(column = 0, columnspan= 1, row = 0, padx= padX, pady= padY)
 
-            self.inputLabel = Label(self.window, text='NOME MOTORISTA', bg= backgroundcolorFont)
+            self.inputLabel = Label(self.window, text= id_name, bg= backgroundcolorFont)
             self.inputLabel['font'] = fontText
             self.inputLabel.grid(column= 0, row= 3)
 
             self.inputValue = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue.grid(column= 0, row= 4)
 
-            self.inputLabel2 = Label(self.window, text= 'CHEGADA CARREGAMENTO',  bg= backgroundcolorFont)
+            self.inputLabel2 = Label(self.window, text= id_start_load,  bg= backgroundcolorFont)
             self.inputLabel2['font'] = fontText
             self.inputLabel2.grid(column= 0, row= 5)
 
             self.inputValue2 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue2.grid(column= 0, row= 6)
 
-            self.inputLabel3 = Label(self.window, text= 'SAIDA CARREGAMENTO', bg= backgroundcolorFont)
+            self.inputLabel3 = Label(self.window, text= id_end_load, bg= backgroundcolorFont)
             self.inputLabel3['font'] = fontText
             self.inputLabel3.grid(column= 0, row= 7)
 
             self.inputValue3 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue3.grid(column= 0, row= 8)
 
-            self.inputLabel4 = Label(self.window, text= 'CHEGADA DESCARGA', bg= backgroundcolorFont)
+            self.inputLabel4 = Label(self.window, text= id_start_unload, bg= backgroundcolorFont)
             self.inputLabel4['font'] = fontText
             self.inputLabel4.grid(column= 0, row= 9)
 
             self.inputValue4 = Entry(self.window, bd= border, bg= backgroundcolorWidget,  width= entryWidth)
             self.inputValue4.grid(column= 0, row= 10)
 
-            self.inputLabel5 = Label(self.window, text= 'SAIDA DESCARGA', bg= backgroundcolorFont)
+            self.inputLabel5 = Label(self.window, text= id_end_unload, bg= backgroundcolorFont)
             self.inputLabel5['font'] = fontText
             self.inputLabel5.grid(column= 0, row= 11)
 
@@ -68,31 +68,31 @@ class horario_motorista:
             self.window.mainloop()
 
         def clearDataBase(self):
-            cd1 = list(data['NOME MOTORISTA'])
-            cd2 = list(data['CHEGADA CARREGAMENTO'])
-            cd3 = list(data['SAIDA CARREGAMENTO'])
-            cd4 = list(data['CHEGADA DESCARGA'])
-            cd5 = list(data['SAIDA DESCARGA'])
+            cd1 = list(data[id_name])
+            cd2 = list(data[id_start_load])
+            cd3 = list(data[id_end_load])
+            cd4 = list(data[id_start_unload])
+            cd5 = list(data[id_end_unload])
 
-            if len(data['NOME MOTORISTA']) != 0:
+            if len(data[id_name]) != 0:
                 for self.numberFrame in cd1:
-                    data['NOME MOTORISTA'].pop()
+                    data[id_name].pop()
 
-            if len(data['CHEGADA CARREGAMENTO']) != 0:
+            if len(data[id_start_load]) != 0:
                 for self.numberFrame in cd2:
-                    data['CHEGADA CARREGAMENTO'].pop()
+                    data[id_start_load].pop()
 
-            if len(data['SAIDA CARREGAMENTO']) != 0:
+            if len(data[id_end_load]) != 0:
                 for self.numberFrame in cd3:
-                    data['SAIDA CARREGAMENTO'].pop()
+                    data[id_end_load].pop()
 
-            if len(data['CHEGADA DESCARGA']) != 0:
+            if len(data[id_start_unload]) != 0:
                 for self.numberFrame in cd4:
-                    data['CHEGADA DESCARGA'].pop()
+                    data[id_start_unload].pop()
 
-            if len(data['SAIDA DESCARGA']) != 0:
+            if len(data[id_end_unload]) != 0:
                 for self.numberFrame in cd5:
-                    data['SAIDA DESCARGA'].pop()
+                    data[id_end_unload].pop()
 
         def saveSheetInDirectory(self,file):
             directorySave = askdirectory(title='Selecione onde deseja salvar o arquivo')
@@ -104,11 +104,11 @@ class horario_motorista:
                 self.end_word['text'] = 'Selecione uma pasta para salvar o arquivo'
 
         def creatSheet(self):
-            cs1 = len(data['NOME MOTORISTA'])
-            cs2 = len(data['CHEGADA CARREGAMENTO'])
-            cs3 = len(data['SAIDA CARREGAMENTO'])
-            cs4 = len(data['CHEGADA DESCARGA'])
-            cs5 = len(data['SAIDA DESCARGA'])
+            cs1 = len(data[id_name])
+            cs2 = len(data[id_start_load])
+            cs3 = len(data[id_end_load])
+            cs4 = len(data[id_start_unload])
+            cs5 = len(data[id_end_unload])
  
             if cs1 and cs2 and cs3 and cs4 and cs5 != 0:
                 file = Workbook()
@@ -143,35 +143,35 @@ class horario_motorista:
             self.text_insert = 'Insira as Informações'
 
             if self.inputValue.get() != '':
-                data['NOME MOTORISTA'].append(self.inputValue.get())
+                data[id_name].append(self.inputValue.get())
                 self.inputValue.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue2.get() != '':
-                data['CHEGADA CARREGAMENTO'].append(self.inputValue2.get())
+                data[id_start_load].append(self.inputValue2.get())
                 self.inputValue2.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue3.get() != '':
-                data['SAIDA CARREGAMENTO'].append(self.inputValue3.get())
+                data[id_end_load].append(self.inputValue3.get())
                 self.inputValue3.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue4.get() != '':
-                data['CHEGADA DESCARGA'].append(self.inputValue4.get())
+                data[id_start_unload].append(self.inputValue4.get())
                 self.inputValue4.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert
                 self.clearDataBase()
 
             if self.inputValue5.get() != '':
-                data['SAIDA DESCARGA'].append(self.inputValue5.get())
+                data[id_end_unload].append(self.inputValue5.get())
                 self.inputValue5.delete(0, 'end')
             else: 
                 self.end_word['text'] = self.text_insert

@@ -16,12 +16,18 @@ entryWidth = 25
 padY = 10
 padX = 5   
 
+id_name = "NOME MOTORISTA"
+id_start_load = "CHEGADA CARREGAMENTO"
+id_end_load = "SAIDA CARREGAMENTO"
+id_start_unload = "CHEGADA DESCARGA"
+id_end_unload = "SAIDA DESCARGA"
+
 data = {
-        'NOME MOTORISTA'      : [],
-        'CHEGADA CARREGAMENTO': [],
-        'SAIDA CARREGAMENTO'  : [],
-        'CHEGADA DESCARGA'    : [],
-        'SAIDA DESCARGA'      : []
+        id_name:         [],
+        id_start_load:   [],
+        id_end_load:     [],
+        id_start_unload: [],
+        id_end_unload:   []
     }
 
 db_config = {
