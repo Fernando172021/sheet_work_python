@@ -53,7 +53,6 @@ git log --oneline
 
 -----------------------------------------
 
-
 VIDEOS
 
 CUSTOMTKINTER: 
