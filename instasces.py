@@ -1,6 +1,6 @@
 #Instacias que definem os estilos das janelas
 
-iconImage = './midia/favicon.ico'
+iconImage = 'midia/favicon.ico'
 
 buttonsHeight = 5
 buttonsWidth  = 30

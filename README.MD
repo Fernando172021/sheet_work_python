@@ -41,6 +41,14 @@ git push
 
 git clone {url do repositorio}
 
+git branch
+
+git branch nome da ramificação
+
+git checkout nome da ramificação
+
+git log --oneline
+
 -----------------------------------------
 
 
