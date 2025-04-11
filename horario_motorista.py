@@ -1,7 +1,8 @@
 from openpyxl import Workbook
 from tkinter.filedialog import askdirectory
 from openpyxl.styles import Font, Alignment, PatternFill
-from instasces import *
+from instances import *
+from style import *
 from tkinter import *
 
 class horario_motorista:
@@ -11,14 +12,18 @@ class horario_motorista:
             self.window.title('HR - Motorista') 
             self.window.iconbitmap(iconImage)
             self.window.resizable(False, False)
+            self.window.configure(bg = colorWindowStandart)
+            register_window(self.window) # Registro da da pagina
 
-            self.word_init = Label(self.window, text= 'Insira os dados da operação abaixo', width= 40, bg= backgroundcolorFont)
+            self.word_init = Label(self.window, text= 'Insira os dados da operação abaixo', width= 40)
             self.word_init['font'] = fontText
             self.word_init.grid(column = 0, columnspan= 1, row = 0, padx= padX, pady= padY)
+            register_winget(self.word_init)
 
             self.inputLabel = Label(self.window, text= id_name, bg= backgroundcolorFont)
             self.inputLabel['font'] = fontText
             self.inputLabel.grid(column= 0, row= 3)
+            register_winget(self.inputLabel)
 
             self.inputValue = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue.grid(column= 0, row= 4)
@@ -26,6 +31,7 @@ class horario_motorista:
             self.inputLabel2 = Label(self.window, text= id_start_load,  bg= backgroundcolorFont)
             self.inputLabel2['font'] = fontText
             self.inputLabel2.grid(column= 0, row= 5)
+            register_winget(self.inputLabel2)
 
             self.inputValue2 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue2.grid(column= 0, row= 6)
@@ -33,6 +39,7 @@ class horario_motorista:
             self.inputLabel3 = Label(self.window, text= id_end_load, bg= backgroundcolorFont)
             self.inputLabel3['font'] = fontText
             self.inputLabel3.grid(column= 0, row= 7)
+            register_winget(self.inputLabel3)
 
             self.inputValue3 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= entryWidth)
             self.inputValue3.grid(column= 0, row= 8)
@@ -40,6 +47,7 @@ class horario_motorista:
             self.inputLabel4 = Label(self.window, text= id_start_unload, bg= backgroundcolorFont)
             self.inputLabel4['font'] = fontText
             self.inputLabel4.grid(column= 0, row= 9)
+            register_winget(self.inputLabel4)
 
             self.inputValue4 = Entry(self.window, bd= border, bg= backgroundcolorWidget,  width= entryWidth)
             self.inputValue4.grid(column= 0, row= 10)
@@ -47,6 +55,7 @@ class horario_motorista:
             self.inputLabel5 = Label(self.window, text= id_end_unload, bg= backgroundcolorFont)
             self.inputLabel5['font'] = fontText
             self.inputLabel5.grid(column= 0, row= 11)
+            register_winget(self.inputLabel5)
 
             self.inputValue5 = Entry(self.window, bd= border, bg= backgroundcolorWidget,  width= entryWidth)
             self.inputValue5.grid(column= 0, row= 12)
@@ -64,6 +73,7 @@ class horario_motorista:
             self.end_word = Label(self.window, text='', bg= backgroundcolorFont)
             self.end_word['font'] = fontText
             self.end_word.grid(column= 0, row= 15, pady= padY)
+            register_winget(self.end_word)
 
             self.window.mainloop()
 

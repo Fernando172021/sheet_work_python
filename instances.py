@@ -1,21 +1,5 @@
 #Instacias que definem os estilos das janelas
 
-iconImage = 'midia/favicon.ico'
-
-buttonsHeight = 5
-buttonsWidth  = 30
-buttonPadx    = 30
-buttonPady    = 15
-
-backgroundcolorWidget = '#f0f8ff'
-backgroundcolorFont   = '#ffffff'
-fontText = ('Arial', '10', 'bold')
-border = 3
-buttonsWidth = 18
-entryWidth = 25
-padY = 10
-padX = 5   
-
 id_name = "NOME MOTORISTA"
 id_start_load = "CHEGADA CARREGAMENTO"
 id_end_load = "SAIDA CARREGAMENTO"

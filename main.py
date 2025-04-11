@@ -1,18 +1,22 @@
-from instasces import *
+from instances import *
+from style import *
 from tkinter import *
 from horario_motorista import horario_motorista
 
 class mainApplication:
     def __init__(self):
         
-        self.mainWindow = Tk()
-        self.mainWindow.title('Gerador de Planilhas')
-        self.mainWindow.iconbitmap(iconImage)
-        self.mainWindow.resizable(False, False)
+        self.Window = Tk()
+        self.Window.title('Gerador de Planilhas')
+        self.Window.iconbitmap(iconImage)
+        self.Window.resizable(False, False)
+        self.Window.config(bg = colorWindowStandart)
+        register_window(self.Window)
 
-        self.titleH1 = Label(self.mainWindow, text='GERADOR DE PLANILHAS', bg= backgroundcolorFont)
+        self.titleH1 = Label(self.Window, text='GERADOR DE PLANILHAS')
         self.titleH1['font'] = fontText
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
+        register_winget(self.titleH1)
 
         self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= horario_motorista)
         self.button1['font'] = fontText
@@ -30,6 +34,14 @@ class mainApplication:
         self.button4['font'] = fontText
         self.button4.grid(column= 20, row= 2, padx= buttonPadx, pady= buttonPady)
 
-        self.mainWindow.mainloop()
+        self.buttonW = Button(text='Claro', width= buttonsWidth, height= 2, bd= border, command= checkColorWhite)
+        self.buttonW['font'] = fontText
+        self.buttonW.grid(column= 10, row= 3, padx= buttonPadx, pady= buttonPady)
+
+        self.buttonD = Button(text='Escuro', width= buttonsWidth, height= 2, bd= border, command= checkColorDark)
+        self.buttonD['font'] = fontText
+        self.buttonD.grid(column= 20, row= 3, padx= buttonPadx, pady= buttonPady)
+
+        self.Window.mainloop()
 
 ia = mainApplication()
