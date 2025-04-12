@@ -7,3 +7,5 @@ config.local.json
 
 # Ignorar diretórios específicos
 /__pycache__/
+
+/virtualEnv/
