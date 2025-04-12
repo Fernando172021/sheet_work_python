@@ -1,7 +1,7 @@
 from instances import *
 from style import *
 from tkinter import *
-from horario_motorista import horario_motorista
+from driver_schedule import driver_schedule
 
 class mainApplication:
     def __init__(self):
@@ -18,7 +18,7 @@ class mainApplication:
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
         register_winget(self.titleH1)
 
-        self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= horario_motorista)
+        self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= driver_schedule)
         self.button1['font'] = fontText
         self.button1.grid(column= 10, row= 1, padx= buttonPadx, pady= buttonPady)
 
@@ -44,4 +44,4 @@ class mainApplication:
 
         self.Window.mainloop()
 
-ia = mainApplication()
+mainApplication = mainApplication()

@@ -43,7 +43,7 @@ def update_window_colors(color):
         for window in registered_windows:
             window.configure(bg = colorWindowStandart)
 
-            for winget in registered_winget:
+    for winget in registered_winget:
                 winget.configure(bg = colorWindowStandart)
                 if color == 'White':
                     winget.configure(fg = '#000000')
