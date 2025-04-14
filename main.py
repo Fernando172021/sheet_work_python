@@ -1,5 +1,5 @@
 from instances import *
-from singIn import singIn
+from sing_in import sing_in
 from style import *
 from tkinter import *
 from driver_schedule import driver_schedule
@@ -23,7 +23,7 @@ class mainApplication:
         self.button1['font'] = fontText
         self.button1.grid(column= 10, row= 1, padx= buttonPadx, pady= buttonPady)
 
-        self.button2 = Button(text='CADASTRO', width= buttonsWidth, height= buttonsHeight, bd= border, command= singIn)
+        self.button2 = Button(text='CADASTRO', width= buttonsWidth, height= buttonsHeight, bd= border, command= sing_in)
         self.button2['font'] = fontText
         self.button2.grid(column= 20, row= 1, padx= buttonPadx, pady= buttonPady)
 
