@@ -1,6 +1,8 @@
 from tkinter import *
 from instances import pessoa_dados
+from instances import ConsoleRedirect
 from style import *
+import sys
 
 class sing_in:
     def __init__(self):
@@ -140,9 +142,22 @@ class sing_in:
         self.input12.grid(row= 8, column= 2, padx= padX, pady= padY)
         register_inputs(self.input12)
 
+        self.button = Button(self.window, text= 'LIMPAR', width= buttonsWidth, height= 2, bd= border, command= person.clearData)
+        self.button['font'] = fontText
+        self.button.grid(row= 9, column= 0, padx= buttonPadx, pady= buttonPady)
+
         self.button = Button(self.window, text= 'CADASTRAR', width= buttonsWidth, height= 2, bd= border, command= person.insert)
         self.button['font'] = fontText
         self.button.grid(row= 9, column= 1, padx= buttonPadx, pady= buttonPady)
+
+        self.button = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border)
+        self.button['font'] = fontText
+        self.button.grid(row= 9, column= 2, padx= buttonPadx, pady= buttonPady)
+
+        self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL)
+        self.console_output.grid(row= 10, column= 1)
+
+        sys.stdout = ConsoleRedirect(self.console_output)
 
         self.window.mainloop()
 
