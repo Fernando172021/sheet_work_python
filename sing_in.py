@@ -142,22 +142,29 @@ class sing_in:
         self.input12.grid(row= 8, column= 2, padx= padX, pady= padY)
         register_inputs(self.input12)
 
-        self.button = Button(self.window, text= 'LIMPAR', width= buttonsWidth, height= 2, bd= border, command= person.clearData)
-        self.button['font'] = fontText
-        self.button.grid(row= 9, column= 0, padx= buttonPadx, pady= buttonPady)
+        self.buttonClear = Button(self.window, text= 'LIMPAR', width= buttonsWidth, height= 2, bd= border, command= person.clearData)
+        self.buttonClear['font'] = fontText
+        self.buttonClear.grid(row= 9, column= 0, padx= buttonPadx, pady= buttonPady)
 
-        self.button = Button(self.window, text= 'CADASTRAR', width= buttonsWidth, height= 2, bd= border, command= person.insert)
-        self.button['font'] = fontText
-        self.button.grid(row= 9, column= 1, padx= buttonPadx, pady= buttonPady)
+        self.buttonUp = Button(self.window, text= 'CADASTRAR', width= buttonsWidth, height= 2, bd= border, command= person.insert)
+        self.buttonUp['font'] = fontText
+        self.buttonUp.grid(row= 9, column= 1, padx= buttonPadx, pady= buttonPady)
 
-        self.button = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border)
-        self.button['font'] = fontText
-        self.button.grid(row= 9, column= 2, padx= buttonPadx, pady= buttonPady)
+        self.buttonSingIn = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border)
+        self.buttonSingIn['font'] = fontText
+        self.buttonSingIn.grid(row= 9, column= 2, padx= buttonPadx, pady= buttonPady)
+
+        self.buttonSearch = Button(self.window, text= 'PESQUISA', width= buttonsWidth, height= 2, bd= border)
+        self.buttonSearch['font'] = fontText
+        self.buttonSearch.grid(row= 10, column= 0, padx= buttonPadx, pady= buttonPady)
 
         self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL, fg= fontColorConsole)
         self.console_output['font'] = fontFamilyConsole
+        self.console_output['font'] = fontSizeConsole
         self.console_output.grid(row= 10, column= 1)
 
         sys.stdout = ConsoleRedirect(self.console_output)
 
         self.window.mainloop()
+
+sign_in = sing_in()
