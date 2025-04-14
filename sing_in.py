@@ -1,6 +1,6 @@
 from tkinter import *
-from instances import Pessoa_Dados
-from instances import ConsoleRedirect
+from instances import Pessoa_Dados, ConsoleRedirect
+from DataBaseConnection import DataBaseInsert, DataBaseDelete
 from style import *
 import sys
 
@@ -8,6 +8,8 @@ class Sing_in:
     def __init__(self):
 
         person = Pessoa_Dados()
+        apply = DataBaseInsert
+        delete = DataBaseDelete
         register_inputs = person.register_inputs
         
         self.window = Tk()
@@ -150,7 +152,7 @@ class Sing_in:
         self.buttonUp['font'] = fontText
         self.buttonUp.grid(row= 9, column= 1, padx= buttonPadx, pady= buttonPady)
 
-        self.buttonSingIn = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border)
+        self.buttonSingIn = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border, command= apply)
         self.buttonSingIn['font'] = fontText
         self.buttonSingIn.grid(row= 9, column= 2, padx= buttonPadx, pady= buttonPady)
 
@@ -160,7 +162,7 @@ class Sing_in:
         self.buttonSearch.grid(row= 10, column= 0, padx= buttonPadx, pady= buttonPady)
 
         # Comando temporario
-        self.buttonDelete = Button(self.window, text= 'DELETAR', width= buttonsWidth, height= 2, bd= border, command= checkColorWhite)
+        self.buttonDelete = Button(self.window, text= 'DELETAR', width= buttonsWidth, height= 2, bd= border, command= delete)
         self.buttonDelete['font'] = fontText
         self.buttonDelete.grid(row= 10, column= 2, padx= buttonPadx, pady= buttonPady)
 
