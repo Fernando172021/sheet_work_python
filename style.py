@@ -9,6 +9,7 @@ backgroundcolorWidget = '#f0f8ff'
 backgroundcolorFont   = '#ffffff'
 fontColorConsole = '#00FF00'
 fontFamilyConsole = 'Consolas'
+fontSizeConsole = 10
 fontText = ('Arial', '10', 'bold')
 border = 3
 buttonsWidth = 18
