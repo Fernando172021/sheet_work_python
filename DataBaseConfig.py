@@ -3,5 +3,5 @@ db_config = {
         'user': 'ADM_FER',
         'password': 'Venom@326$s21',
         'database': 'corp',
-        'table': 'USUARIOS2'
+        'table_user': 'USUARIO'
     }
