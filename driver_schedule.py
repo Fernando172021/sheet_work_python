@@ -5,7 +5,7 @@ from instances import *
 from style import *
 from tkinter import *
 
-class driver_schedule:
+class Driver_schedule:
         def __init__(self):
 
             self.window = Tk()

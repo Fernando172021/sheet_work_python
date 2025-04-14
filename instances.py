@@ -1,5 +1,3 @@
-import os
-
 #Instacias que definem os estilos das janelas
 
 reg_input = []
@@ -19,7 +17,7 @@ data = {
         id_end_unload:   []
     }
 
-class pessoa_dados:
+class Pessoa_Dados:
     id_cadastro_nome = "NOME"
     id_cadastro_sobrenome = "SOBRENOME"
     id_cadastro_data_nascimento = "DATA NASCIMENTO"

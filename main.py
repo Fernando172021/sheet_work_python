@@ -1,10 +1,10 @@
 from instances import *
-from sing_in import sing_in
+from sing_in import Sing_in
 from style import *
 from tkinter import *
-from driver_schedule import driver_schedule
+from driver_schedule import Driver_schedule
 
-class mainApplication:
+class MainApplication:
     def __init__(self):
         
         self.Window = Tk()
@@ -19,11 +19,11 @@ class mainApplication:
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
         register_winget(self.titleH1)
 
-        self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= driver_schedule)
+        self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= Driver_schedule)
         self.button1['font'] = fontText
         self.button1.grid(column= 10, row= 1, padx= buttonPadx, pady= buttonPady)
 
-        self.button2 = Button(text='CADASTRO', width= buttonsWidth, height= buttonsHeight, bd= border, command= sing_in)
+        self.button2 = Button(text='CADASTRO', width= buttonsWidth, height= buttonsHeight, bd= border, command= Sing_in)
         self.button2['font'] = fontText
         self.button2.grid(column= 20, row= 1, padx= buttonPadx, pady= buttonPady)
 
@@ -45,4 +45,4 @@ class mainApplication:
 
         self.Window.mainloop()
 
-mainApplication = mainApplication()
+mainApplication = MainApplication()

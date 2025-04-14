@@ -1,13 +1,13 @@
 from tkinter import *
-from instances import pessoa_dados
+from instances import Pessoa_Dados
 from instances import ConsoleRedirect
 from style import *
 import sys
 
-class sing_in:
+class Sing_in:
     def __init__(self):
 
-        person = pessoa_dados()
+        person = Pessoa_Dados()
         register_inputs = person.register_inputs
         
         self.window = Tk()
@@ -154,17 +154,22 @@ class sing_in:
         self.buttonSingIn['font'] = fontText
         self.buttonSingIn.grid(row= 9, column= 2, padx= buttonPadx, pady= buttonPady)
 
-        self.buttonSearch = Button(self.window, text= 'PESQUISA', width= buttonsWidth, height= 2, bd= border)
+        # Comando temporario
+        self.buttonSearch = Button(self.window, text= 'PESQUISA', width= buttonsWidth, height= 2, bd= border, command= checkColorDark)
         self.buttonSearch['font'] = fontText
         self.buttonSearch.grid(row= 10, column= 0, padx= buttonPadx, pady= buttonPady)
 
-        self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL, fg= fontColorConsole)
+        # Comando temporario
+        self.buttonDelete = Button(self.window, text= 'DELETAR', width= buttonsWidth, height= 2, bd= border, command= checkColorWhite)
+        self.buttonDelete['font'] = fontText
+        self.buttonDelete.grid(row= 10, column= 2, padx= buttonPadx, pady= buttonPady)
+
+        self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL, fg= fontColorConsole, bg= '#f7f7f7')
         self.console_output['font'] = fontFamilyConsole
-        self.console_output['font'] = fontSizeConsole
         self.console_output.grid(row= 10, column= 1)
 
         sys.stdout = ConsoleRedirect(self.console_output)
 
         self.window.mainloop()
 
-sign_in = sing_in()
+sing_in = Sing_in()
