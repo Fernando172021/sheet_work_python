@@ -1,3 +1,5 @@
+import os
+
 #Instacias que definem os estilos das janelas
 
 reg_input = []
@@ -54,7 +56,7 @@ class pessoa_dados:
             if reg_input[i].get() != '':
                 self.data_for_signup[key].append(reg_input[i].get())
                 reg_input[i].delete(0, 'end')
-                print(self.data_for_signup[key])
+                print(f'Pré Carregado --> {self.data_for_signup[key]}')
             else:
                 self.clearData()
 
@@ -62,11 +64,12 @@ class pessoa_dados:
         for key in self.data_for_signup.keys():
             if len(self.data_for_signup[key]) != 0:
                 self.data_for_signup[key].clear()
-                print(f'{key} foi limpo')
+                print(f'{key} --> LIMPO')
         
         for i in reg_input:
             i.delete(0, 'end')
-            print('Interface limpa')
+        
+        print('INSIRA TODAS AS INSFORMAÇÕES\nINTERFACE LIMPA')
 
 class ConsoleRedirect:
 
