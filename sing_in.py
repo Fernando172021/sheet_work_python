@@ -154,11 +154,10 @@ class sing_in:
         self.button['font'] = fontText
         self.button.grid(row= 9, column= 2, padx= buttonPadx, pady= buttonPady)
 
-        self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL)
+        self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL, fg= fontColorConsole)
+        self.console_output['font'] = fontFamilyConsole
         self.console_output.grid(row= 10, column= 1)
 
         sys.stdout = ConsoleRedirect(self.console_output)
 
         self.window.mainloop()
-
-sing_in = sing_in()
