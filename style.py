@@ -7,6 +7,8 @@ buttonPady    = 15
 
 backgroundcolorWidget = '#f0f8ff'
 backgroundcolorFont   = '#ffffff'
+fontColorConsole = '#00FF00'
+fontFamilyConsole = 'Consolas'
 fontText = ('Arial', '10', 'bold')
 border = 3
 buttonsWidth = 18
