@@ -48,13 +48,13 @@ class Pessoa_Dados:
 
     def register_inputs(self, valueInput):
         reg_input.append(valueInput)
-
+    
     def insert(self):
         for i, key in enumerate(self.data_for_signup.keys()):
             if reg_input[i].get() != '':
                 self.data_for_signup[key].append(reg_input[i].get())
                 reg_input[i].delete(0, 'end')
-                print(f'Pré Carregado --> {self.data_for_signup[key]}')
+                print(f'Pré Carregado --> {self.data_for_signup[key][0]}')
             else:
                 self.clearData()
 
