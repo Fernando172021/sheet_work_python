@@ -66,10 +66,11 @@ class DataBaseDelete:
             print('Conexão encerrada!')
     
     def delete_data_user(self):
-        personData = Pessoa_Dados
-        dataDelete = personData.data_for_signup
+        personData = Pessoa_Dados()
+        dataDelete = personData.get_data_for_singup()
+        idCadastro = personData.get_id_cadastros()
 
-        self.delete_command = f'DELETE FROM {db_config['table_user']} WHERE EMAIL = "{dataDelete[personData.id_cadastro_email][0]}";'
+        self.delete_command = f'DELETE FROM {db_config['table_user']} WHERE EMAIL = "{dataDelete[idCadastro[4]][0]}";'
 
         return self.delete_command
     
@@ -99,9 +100,10 @@ class DataBaseSelect:
             print('Conexão encerrada!')
 
     def select_data_user(self):
-        personData = Pessoa_Dados
-        dataSelect = personData.data_for_signup
+        personData = Pessoa_Dados()
+        dataSelect = personData.get_data_for_singup()
+        idCadastro = personData.get_id_cadastros()
 
-        self.select_command = f'SELECT * FROM {db_config['table_user']} WHERE EMAIL = "{dataSelect[personData.id_cadastro_email][0]}";'
+        self.select_command = f'SELECT * FROM {db_config['table_user']} WHERE EMAIL = "{dataSelect[idCadastro[4]][0]}";'
 
         return self.select_command
