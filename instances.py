@@ -56,7 +56,8 @@ class Pessoa_Dados:
                 reg_input[i].delete(0, 'end')
                 print(f'Pré Carregado --> {self.data_for_signup[key][0]}')
             else:
-                self.clearData()
+                print('clear data insert')
+                self.clearD
 
     def clearData(self):
         for key in self.data_for_signup.keys():
