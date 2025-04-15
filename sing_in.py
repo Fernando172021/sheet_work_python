@@ -1,6 +1,6 @@
 from tkinter import *
 from instances import Pessoa_Dados, ConsoleRedirect
-from DataBaseConnection import DataBaseInsert, DataBaseDelete
+from DataBaseConnection import DataBaseInsert, DataBaseDelete, DataBaseSelect
 from style import *
 import sys
 
@@ -8,8 +8,9 @@ class Sing_in:
     def __init__(self):
 
         person = Pessoa_Dados()
-        apply = DataBaseInsert
-        delete = DataBaseDelete
+        dataBaseInsert = DataBaseInsert
+        dataBaseDelete = DataBaseDelete
+        dataBaseSelect = DataBaseSelect
         register_inputs = person.register_inputs
         
         self.window = Tk()
@@ -144,34 +145,36 @@ class Sing_in:
         self.input12.grid(row= 8, column= 2, padx= padX, pady= padY)
         register_inputs(self.input12)
 
+        self.labelText = Label(self.window, text= 'Para PESQUISAR / DELETAR digite o email aperte CADASTRAR e em seguida as opções anteriores.')
+        self.labelText['font'] = fontText
+        self.labelText.grid(row= 9, column= 1, padx= padX, pady= padY)
+
         self.buttonClear = Button(self.window, text= 'LIMPAR', width= buttonsWidth, height= 2, bd= border, command= person.clearData)
         self.buttonClear['font'] = fontText
-        self.buttonClear.grid(row= 9, column= 0, padx= buttonPadx, pady= buttonPady)
+        self.buttonClear.grid(row= 10, column= 0, padx= buttonPadx, pady= buttonPady)
 
         self.buttonUp = Button(self.window, text= 'CADASTRAR', width= buttonsWidth, height= 2, bd= border, command= person.insert)
         self.buttonUp['font'] = fontText
-        self.buttonUp.grid(row= 9, column= 1, padx= buttonPadx, pady= buttonPady)
+        self.buttonUp.grid(row= 10, column= 1, padx= buttonPadx, pady= buttonPady)
 
-        self.buttonSingIn = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border, command= apply)
+        self.buttonSingIn = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border, command= dataBaseInsert)
         self.buttonSingIn['font'] = fontText
-        self.buttonSingIn.grid(row= 9, column= 2, padx= buttonPadx, pady= buttonPady)
+        self.buttonSingIn.grid(row= 10, column= 2, padx= buttonPadx, pady= buttonPady)
 
         # Comando temporario
-        self.buttonSearch = Button(self.window, text= 'PESQUISA', width= buttonsWidth, height= 2, bd= border, command= checkColorDark)
+        self.buttonSearch = Button(self.window, text= 'PESQUISA', width= buttonsWidth, height= 2, bd= border, command= dataBaseSelect)
         self.buttonSearch['font'] = fontText
-        self.buttonSearch.grid(row= 10, column= 0, padx= buttonPadx, pady= buttonPady)
+        self.buttonSearch.grid(row= 11, column= 0, padx= buttonPadx, pady= buttonPady)
 
         # Comando temporario
-        self.buttonDelete = Button(self.window, text= 'DELETAR', width= buttonsWidth, height= 2, bd= border, command= delete)
+        self.buttonDelete = Button(self.window, text= 'DELETAR', width= buttonsWidth, height= 2, bd= border, command= dataBaseDelete)
         self.buttonDelete['font'] = fontText
-        self.buttonDelete.grid(row= 10, column= 2, padx= buttonPadx, pady= buttonPady)
+        self.buttonDelete.grid(row= 11, column= 2, padx= buttonPadx, pady= buttonPady)
 
         self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL, fg= fontColorConsole, bg= '#f7f7f7')
         self.console_output['font'] = fontFamilyConsole
-        self.console_output.grid(row= 10, column= 1)
+        self.console_output.grid(row= 11, column= 1)
 
         sys.stdout = ConsoleRedirect(self.console_output)
 
         self.window.mainloop()
-
-sing_in = Sing_in()
