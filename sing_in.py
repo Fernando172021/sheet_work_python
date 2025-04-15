@@ -12,6 +12,7 @@ class Sing_in:
         dataBaseDelete = DataBaseDelete
         dataBaseSelect = DataBaseSelect
         register_inputs = person.register_inputs
+        id_cadastros = person.get_id_cadastros()
         
         self.window = Tk()
         self.window.title('Cadastro')
@@ -25,7 +26,7 @@ class Sing_in:
         self.label0.grid(row= 0, column= 1, padx= padX, pady= padY)
         register_winget(self.label0)
 
-        self.label1 = Label(self.window, text= person.id_cadastro_nome, width= 40)
+        self.label1 = Label(self.window, text= id_cadastros[0], width= 40)
         self.label1['font'] = fontText
         self.label1.grid(row= 1, column= 0, padx= padX, pady= padY)
         register_winget(self.label1)
@@ -35,7 +36,7 @@ class Sing_in:
         self.input1.grid(row= 2, column= 0, padx= padX, pady= padY)
         register_inputs(self.input1)
 
-        self.label2 = Label(self.window, text= person.id_cadastro_sobrenome, width= 40)
+        self.label2 = Label(self.window, text= id_cadastros[1], width= 40)
         self.label2['font'] = fontText
         self.label2.grid(row= 1, column= 1, padx= padX, pady= padY)
         register_winget(self.label2)
@@ -45,7 +46,7 @@ class Sing_in:
         self.input2.grid(row= 2, column= 1, padx= padX, pady= padY)
         register_inputs(self.input2)
 
-        self.label3 = Label(self.window, text= person.id_cadastro_data_nascimento, width= 40)
+        self.label3 = Label(self.window, text= id_cadastros[2], width= 40)
         self.label3['font'] = fontText
         self.label3.grid(row= 1, column= 2, padx= padX, pady= padY)
         register_winget(self.label3)
@@ -55,7 +56,7 @@ class Sing_in:
         self.input3.grid(row= 2, column= 2, padx= padX, pady= padY)
         register_inputs(self.input3)
 
-        self.label4 = Label(self.window, text= person.id_cadastro_numero_telefone, width= 40)
+        self.label4 = Label(self.window, text= id_cadastros[3], width= 40)
         self.label4['font'] = fontText
         self.label4.grid(row= 3, column= 0, padx= padX, pady= padY)
         register_winget(self.label4)
@@ -65,7 +66,7 @@ class Sing_in:
         self.input4.grid(row= 4, column= 0, padx= padX, pady= padY)
         register_inputs(self.input4)
 
-        self.label5 = Label(self.window, text= person.id_cadastro_email, width= 40)
+        self.label5 = Label(self.window, text= id_cadastros[4], width= 40)
         self.label5['font'] = fontText
         self.label5.grid(row= 3, column= 1, padx= padX, pady= padY)
         register_winget(self.label5)
@@ -75,7 +76,7 @@ class Sing_in:
         self.input5.grid(row= 4, column= 1, padx= padX, pady= padY)
         register_inputs(self.input5)
 
-        self.label6 = Label(self.window, text= person.id_cadastro_logradouro, width= 40)
+        self.label6 = Label(self.window, text= id_cadastros[5], width= 40)
         self.label6['font'] = fontText
         self.label6.grid(row= 3, column= 2, padx= padX, pady= padY)
         register_winget(self.label6)
@@ -85,7 +86,7 @@ class Sing_in:
         self.input6.grid(row= 4, column= 2, padx= padX, pady= padY)
         register_inputs(self.input6)
 
-        self.label7 = Label(self.window, text= person.id_cadastro_numero_casa, width= 40)
+        self.label7 = Label(self.window, text= id_cadastros[6], width= 40)
         self.label7['font'] = fontText
         self.label7.grid(row= 5, column= 0, padx= padX, pady= padY)
         register_winget(self.label7)
@@ -95,7 +96,7 @@ class Sing_in:
         self.input7.grid(row= 6, column= 0, padx= padX, pady= padY)
         register_inputs(self.input7)
 
-        self.label8 = Label(self.window, text= person.id_cadastro_complemento, width= 40)
+        self.label8 = Label(self.window, text= id_cadastros[7], width= 40)
         self.label8['font'] = fontText
         self.label8.grid(row= 5, column= 1, padx= padX, pady= padY)
         register_winget(self.label8)
@@ -105,7 +106,7 @@ class Sing_in:
         self.input8.grid(row= 6, column= 1, padx= padX, pady= padY)
         register_inputs(self.input8)
 
-        self.label9 = Label(self.window, text= person.id_cadastro_bairro, width= 40)
+        self.label9 = Label(self.window, text= id_cadastros[8], width= 40)
         self.label9['font'] = fontText
         self.label9.grid(row= 5, column= 2, padx= padX, pady= padY)
         register_winget(self.label9)
@@ -115,7 +116,7 @@ class Sing_in:
         self.input9.grid(row= 6, column= 2, padx= padX, pady= padY)
         register_inputs(self.input9)
 
-        self.label10 = Label(self.window, text= person.id_cadastro_cidade, width= 40)
+        self.label10 = Label(self.window, text= id_cadastros[9], width= 40)
         self.label10['font'] = fontText
         self.label10.grid(row= 7, column= 0, padx= padX, pady= padY)
         register_winget(self.label10)
@@ -125,7 +126,7 @@ class Sing_in:
         self.input10.grid(row= 8, column= 0, padx= padX, pady= padY)
         register_inputs(self.input10)
 
-        self.label11 = Label(self.window, text= person.id_cadastro_cep, width= 40)
+        self.label11 = Label(self.window, text= id_cadastros[10], width= 40)
         self.label11['font'] = fontText
         self.label11.grid(row= 7, column= 1, padx= padX, pady= padY)
         register_winget(self.label11)
@@ -135,7 +136,7 @@ class Sing_in:
         self.input11.grid(row= 8, column= 1, padx= padX, pady= padY)
         register_inputs(self.input11)
 
-        self.label12 = Label(self.window, text= person.id_cadastro_estado, width= 40)
+        self.label12 = Label(self.window, text= id_cadastros[11], width= 40)
         self.label12['font'] = fontText
         self.label12.grid(row= 7, column= 2, padx= padX, pady= padY)
         register_winget(self.label12)
