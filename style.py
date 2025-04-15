@@ -1,3 +1,5 @@
+from instances import AppCore
+
 iconImage = 'midia/favicon.ico'
 
 buttonsHeight = 5
@@ -23,17 +25,11 @@ color_window = {
 
 colorWindowStandart = color_window['White']
 
-registered_windows  = []
-
-registered_winget = []
-
-def register_window(window):
-    registered_windows.append(window)
-
-def register_winget(winget):
-    registered_winget.append(winget)
-
 def update_window_colors(color):
+    core = AppCore()
+    registered_windows = core.getRegisteredWindow()
+    registered_winget = core.getRegisteredWinget()
+    
     global colorWindowStandart
 
     for mode in color_window.keys():

@@ -1,10 +1,14 @@
+from instances import AppCore
 from sing_in import Sing_in
 from style import *
 from tkinter import *
-from driver_schedule import Driver_schedule
+from DriverSchedule import DriverSchedule
 
 class MainApplication:
     def __init__(self):
+        core = AppCore()
+        register_window = core.setRegisteredWindow
+        register_winget = core.setRegisteredWinget
         
         self.Window = Tk()
         self.Window.title('Gerador de Planilhas')
@@ -18,7 +22,7 @@ class MainApplication:
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
         register_winget(self.titleH1)
 
-        self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= Driver_schedule)
+        self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= DriverSchedule)
         self.button1['font'] = fontText
         self.button1.grid(column= 10, row= 1, padx= buttonPadx, pady= buttonPady)
 
