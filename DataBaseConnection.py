@@ -1,5 +1,5 @@
 from DataBaseConfig import *
-from instances import Pessoa_Dados
+from instances import PessoaDados
 import pymysql
 
 class DataBaseInsert:
@@ -26,10 +26,9 @@ class DataBaseInsert:
             self.cursor.close()
             con.close()
             print('Conexão encerrada!')
-                
 
     def insert_data_user(self):
-        personData = Pessoa_Dados()
+        personData = PessoaDados()
         dataSingUp = personData.get_data_for_singup()
         getDataId = personData.get_id_cadastros()
         
@@ -66,7 +65,7 @@ class DataBaseDelete:
             print('Conexão encerrada!')
     
     def delete_data_user(self):
-        personData = Pessoa_Dados()
+        personData = PessoaDados()
         dataDelete = personData.get_data_for_singup()
         idCadastro = personData.get_id_cadastros()
 
@@ -100,7 +99,7 @@ class DataBaseSelect:
             print('Conexão encerrada!')
 
     def select_data_user(self):
-        personData = Pessoa_Dados()
+        personData = PessoaDados()
         dataSelect = personData.get_data_for_singup()
         idCadastro = personData.get_id_cadastros()
 
