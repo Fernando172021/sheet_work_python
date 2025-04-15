@@ -18,51 +18,69 @@ data = {
     }
 
 class Pessoa_Dados:
-    id_cadastro_nome = "NOME"
-    id_cadastro_sobrenome = "SOBRENOME"
-    id_cadastro_data_nascimento = "DATA NASCIMENTO"
-    id_cadastro_numero_telefone = "NUMERO TELEFONE" 
-    id_cadastro_email = "E-MAIL"
-    id_cadastro_logradouro = "LOGRADOURO"
-    id_cadastro_numero_casa = "NÚMERO DA CASA"
-    id_cadastro_complemento = "COMPLEMENTO"
-    id_cadastro_bairro = "BAIRRO" 
-    id_cadastro_cidade = "CIDADE"
-    id_cadastro_cep = "CEP"
-    id_cadastro_estado = "ESTADO"
+    __id_cadastro_nome = "NOME"
+    __id_cadastro_sobrenome = "SOBRENOME"
+    __id_cadastro_data_nascimento = "DATA NASCIMENTO"
+    __id_cadastro_numero_telefone = "NUMERO TELEFONE" 
+    __id_cadastro_email = "E-MAIL"
+    __id_cadastro_logradouro = "LOGRADOURO"
+    __id_cadastro_numero_casa = "NÚMERO DA CASA"
+    __id_cadastro_complemento = "COMPLEMENTO"
+    __id_cadastro_bairro = "BAIRRO" 
+    __id_cadastro_cidade = "CIDADE"
+    __id_cadastro_cep = "CEP"
+    __id_cadastro_estado = "ESTADO"
 
-    data_for_signup = {
-        id_cadastro_nome:            [],
-        id_cadastro_sobrenome:       [],
-        id_cadastro_data_nascimento: [],
-        id_cadastro_numero_telefone: [],
-        id_cadastro_email:           [],
-        id_cadastro_logradouro:      [],
-        id_cadastro_numero_casa:     [],
-        id_cadastro_complemento:     [],
-        id_cadastro_bairro:          [],
-        id_cadastro_cidade:          [],
-        id_cadastro_cep:             [],
-        id_cadastro_estado:          []
+    __data_for_signup = {
+        __id_cadastro_nome:            [],
+        __id_cadastro_sobrenome:       [],
+        __id_cadastro_data_nascimento: [],
+        __id_cadastro_numero_telefone: [],
+        __id_cadastro_email:           [],
+        __id_cadastro_logradouro:      [],
+        __id_cadastro_numero_casa:     [],
+        __id_cadastro_complemento:     [],
+        __id_cadastro_bairro:          [],
+        __id_cadastro_cidade:          [],
+        __id_cadastro_cep:             [],
+        __id_cadastro_estado:          []
     }
+
+    def get_data_for_singup(self):
+        return self.__data_for_signup
+    
+    def get_id_cadastros(self):
+        self.__id_cadastros = []
+        for i in self.get_data_for_singup().keys():
+            self.__id_cadastros.append(i)
+
+        return self.__id_cadastros
+
+    
+    def set_data_for_singup(self, key, registeredEntry):
+        self.__data_for_signup[key].append(registeredEntry.get())
 
     def register_inputs(self, valueInput):
         reg_input.append(valueInput)
     
     def insert(self):
-        for i, key in enumerate(self.data_for_signup.keys()):
+        __listDataUser = self.get_data_for_singup()
+
+        for i, key in enumerate(__listDataUser.keys()):
             if reg_input[i].get() != '':
-                self.data_for_signup[key].append(reg_input[i].get())
+                self.set_data_for_singup(key, reg_input[i])
                 reg_input[i].delete(0, 'end')
-                print(f'Pré Carregado --> {self.data_for_signup[key][0]}')
+                print(f'Pré Carregado --> {__listDataUser[key][0]}')
             else:
                 print('clear data insert')
-                self.clearD
+                self.clearData
 
     def clearData(self):
-        for key in self.data_for_signup.keys():
-            if len(self.data_for_signup[key]) != 0:
-                self.data_for_signup[key].clear()
+        __listDataUser = self.get_data_for_singup()
+
+        for key in __listDataUser.keys():
+            if len(__listDataUser[key]) != 0:
+                __listDataUser[key].clear()
                 print(f'{key} --> LIMPO')
         
         for i in reg_input:
