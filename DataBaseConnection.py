@@ -29,13 +29,13 @@ class DataBaseInsert:
                 
 
     def insert_data_user(self):
-        personData = Pessoa_Dados
-        dataSingUp = personData.data_for_signup
+        personData = Pessoa_Dados()
+        dataSingUp = personData.get_data_for_singup()
+        getDataId = personData.get_id_cadastros()
         
-        insert_command = f'INSERT INTO {db_config['table_user']} () VALUES ("{dataSingUp[personData.id_cadastro_nome][0]}","{dataSingUp[personData.id_cadastro_sobrenome][0]}","{dataSingUp[personData.id_cadastro_data_nascimento][0]}","{dataSingUp[personData.id_cadastro_numero_telefone][0]}","{dataSingUp[personData.id_cadastro_email][0]}","{dataSingUp[personData.id_cadastro_logradouro][0]}","{dataSingUp[personData.id_cadastro_numero_casa][0]}","{dataSingUp[personData.id_cadastro_complemento][0]}","{dataSingUp[personData.id_cadastro_bairro][0]}","{dataSingUp[personData.id_cadastro_cidade][0]}","{dataSingUp[personData.id_cadastro_cep][0]}","{dataSingUp[personData.id_cadastro_estado][0]}");' 
+        insert_command = f'INSERT INTO {db_config['table_user']} () VALUES ("{dataSingUp[getDataId[0]][0]}","{dataSingUp[getDataId[1]][0]}","{dataSingUp[getDataId[2]][0]}","{dataSingUp[getDataId[3]][0]}","{dataSingUp[getDataId[4]][0]}","{dataSingUp[getDataId[5]][0]}","{dataSingUp[getDataId[6]][0]}","{dataSingUp[getDataId[7]][0]}","{dataSingUp[getDataId[8]][0]}","{dataSingUp[getDataId[9]][0]}","{dataSingUp[getDataId[10]][0]}","{dataSingUp[getDataId[11]][0]}");' 
 
         return insert_command
-
 
 class DataBaseDelete:
     def __init__(self):
