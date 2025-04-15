@@ -1,4 +1,3 @@
-from instances import *
 from sing_in import Sing_in
 from style import *
 from tkinter import *
