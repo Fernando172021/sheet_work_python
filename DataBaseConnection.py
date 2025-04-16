@@ -88,6 +88,10 @@ class DataBaseSelect:
             con.commit()
             
             print(self.cursor.fetchall())
+        
+        except TypeError as a:
+            print(f'Listas vazias. Preencha todas as informações!: {a}')
+            con.rollback()
 
         except pymysql.Error as a:
             print(f'Erro ao inserir dados: {a}')
@@ -99,10 +103,14 @@ class DataBaseSelect:
             print('Conexão encerrada!')
 
     def select_data_user(self):
-        personData = PessoaDados()
-        dataSelect = personData.get_data_for_singup()
-        idCadastro = personData.get_id_cadastros()
+        try:
+            personData = PessoaDados()
+            dataSelect = personData.get_data_for_singup()
+            idCadastro = personData.get_id_cadastros()
 
-        self.select_command = f'SELECT * FROM {db_config['table_user']} WHERE EMAIL = "{dataSelect[idCadastro[4]][0]}";'
+            select_command = f'SELECT * FROM {db_config['table_user']} WHERE EMAIL = "{dataSelect[idCadastro[4]][0]}";'
+            return select_command
+        
+        except IndexError as x:
+            print(f'Listas vazias. Preencha todas as informações! {x}')
 
-        return self.select_command
