@@ -59,19 +59,27 @@ class DataBaseDelete:
             print(f'Erro ao inserir dados: {a}')
             con.rollback()
 
+        except TypeError as a:
+            print(f'Listas vazias. Preencha todas as informações!: {a}')
+
         finally:
             self.cursor.close()
             con.close()
             print('Conexão encerrada!')
     
     def delete_data_user(self):
-        personData = PessoaDados()
-        dataDelete = personData.get_data_for_singup()
-        idCadastro = personData.get_id_cadastros()
+        try:
+            personData = PessoaDados()
+            dataDelete = personData.get_data_for_singup()
+            idCadastro = personData.get_id_cadastros()
 
-        self.delete_command = f'DELETE FROM {db_config['table_user']} WHERE EMAIL = "{dataDelete[idCadastro[4]][0]}";'
+            self.delete_command = f'DELETE FROM {db_config['table_user']} WHERE EMAIL = "{dataDelete[idCadastro[4]][0]}";'
 
-        return self.delete_command
+            return self.delete_command
+        
+        except IndexError as x:
+            print(f'Para deletar cadastre as informações do registro! {x}')
+
     
 class DataBaseSelect:
     def __init__(self):
