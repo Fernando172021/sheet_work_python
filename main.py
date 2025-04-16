@@ -15,12 +15,12 @@ class MainApplication:
         self.Window.iconbitmap(iconImage)
         self.Window.resizable(False, False)
         self.Window.config(bg = colorWindowStandart)
-        register_window(self.Window)
+        register_window('main_window', self.Window)
 
         self.titleH1 = Label(self.Window, text='GERADOR DE PLANILHAS')
         self.titleH1['font'] = fontText
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
-        register_winget(self.titleH1)
+        register_winget('main_titleH1', self.titleH1)
 
         self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= DriverSchedule)
         self.button1['font'] = fontText

@@ -23,7 +23,7 @@ class DataBaseInsert:
             con.rollback()
         
         except TypeError as a:
-            print(f'Listas vazias. Preencha todas as informações!: {a}')
+            print(f'Listas vazias. Preencha todas as informações!: {a}\n')
 
         finally:
             self.cursor.close()
@@ -41,7 +41,7 @@ class DataBaseInsert:
             return insert_command
         
         except IndexError as x:
-            print(f'Para inserir informações  no BD cadastre as mesmas antes! {x}')
+            print(f'Para inserir informações  no BD cadastre as mesmas antes! {x}\n')
 
 class DataBaseDelete:
     def __init__(self):
@@ -67,7 +67,7 @@ class DataBaseDelete:
             con.rollback()
 
         except TypeError as a:
-            print(f'Listas vazias. Preencha todas as informações!: {a}')
+            print(f'Listas vazias. Preencha todas as informações!: {a}\n')
 
         finally:
             self.cursor.close()
@@ -85,7 +85,7 @@ class DataBaseDelete:
             return self.delete_command
         
         except IndexError as x:
-            print(f'Para deletar cadastre as informações do registro! {x}')
+            print(f'Para deletar cadastre as informações do registro! {x}\n')
 
     
 class DataBaseSelect:
@@ -105,7 +105,7 @@ class DataBaseSelect:
             print(self.cursor.fetchall())
         
         except TypeError as a:
-            print(f'Listas vazias. Preencha todas as informações!: {a}')
+            print(f'Listas vazias. Preencha todas as informações!: {a}\n')
             con.rollback()
 
         except pymysql.Error as a:
@@ -127,5 +127,5 @@ class DataBaseSelect:
             return select_command
         
         except IndexError as x:
-            print(f'Listas vazias. Preencha todas as informações! {x}')
+            print(f'Listas vazias. Preencha todas as informações! {x}\n')
 

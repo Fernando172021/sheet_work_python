@@ -264,15 +264,12 @@ class PessoaDados:
         registerInput = core.getRegisteredInput()
         __listDataUser = self.get_data_for_singup()
 
-        for key in __listDataUser.keys():
-            if len(__listDataUser[key]) != 0:
-                __listDataUser[key].clear()
-                print(f'{key} --> LIMPO')
+        __listDataUser.clear()
         
         for i in registerInput:
-            i.delete(0, 'end')
+            registerInput[i].delete(0, 'end')
         
-        print('INSIRA TODAS AS INSFORMAÇÕES\nINTERFACE LIMPA')
+        print('INSIRA TODAS AS INSFORMAÇÕES\nINTERFACE LIMPA\n')
 
 class ConsoleRedirect:
 
@@ -280,7 +277,7 @@ class ConsoleRedirect:
         self.text_widget = text_widget
 
     def write(self, message):
-        self.text_widget.insert('end', message)  
+        self.text_widget.insert('end', message)   
         self.text_widget.see('end')  
 
     def flush(self):
