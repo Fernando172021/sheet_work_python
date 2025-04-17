@@ -1,6 +1,7 @@
 # Ignorar arquivos temporários do sistema
 *.tmp
 *.log
+*.gitignore
 
 # Ignorar arquivos de configuração locais
 config.local.json
