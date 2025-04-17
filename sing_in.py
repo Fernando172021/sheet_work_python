@@ -150,7 +150,7 @@ class Sing_in:
         self.input12.grid(row= 8, column= 2, padx= padX, pady= padY)
         register_inputs('SingIn', self.input12)
 
-        self.labelText = Label(self.window, text= 'Para PESQUISAR / DELETAR digite o email aperte CADASTRAR e em seguida as opções anteriores.')
+        self.labelText = Label(self.window, text= 'Para PESQUISAR / DELETAR digite o Nome aperte CADASTRAR e em seguida as opções anteriores.')
         self.labelText['font'] = fontText
         self.labelText.grid(row= 9, column= 1, padx= padX, pady= padY)
 
