@@ -173,7 +173,7 @@ class Sing_in:
         self.buttonDelete['font'] = fontText
         self.buttonDelete.grid(row= 11, column= 2, padx= buttonPadx, pady= buttonPady)
 
-        self.console_output = Text(self.window, height= 10, width= 50, state= NORMAL, fg= fontColorConsole, bg= '#f7f7f7')
+        self.console_output = Text(self.window, height= 10, width= 70, state= NORMAL, fg= fontColorConsole, bg= '#f7f7f7')
         self.console_output['font'] = fontFamilyConsole
         self.console_output.grid(row= 11, column= 1)
 

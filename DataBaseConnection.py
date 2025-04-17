@@ -36,7 +36,7 @@ class DataBaseInsert:
             dataSingUp = personData.get_data_for_singup()
             getDataId = personData.get_id_cadastros()
         
-            insert_command = f'INSERT INTO {db_config['table_user']} () VALUES ("{dataSingUp[getDataId[0]][0]}","{dataSingUp[getDataId[1]][0]}","   {dataSingUp[getDataId[2]][0]}","{dataSingUp[getDataId[3]][0]}","{dataSingUp[getDataId[4]][0]}","{dataSingUp[getDataId[5]][0]}","   {dataSingUp[getDataId[6]][0]}","{dataSingUp[getDataId[7]][0]}","{dataSingUp[getDataId[8]][0]}","{dataSingUp[getDataId[9]][0]}","   {dataSingUp[getDataId[10]][0]}","{dataSingUp[getDataId[11]][0]}");' 
+            insert_command = f'INSERT INTO {db_config['table_user']} () VALUES ("{dataSingUp[getDataId[0]][0]}","{dataSingUp[getDataId[1]][0]}","{dataSingUp[getDataId[2]][0]}","{dataSingUp[getDataId[3]][0]}","{dataSingUp[getDataId[4]][0]}","{dataSingUp[getDataId[5]][0]}","{dataSingUp[getDataId[6]][0]}","{dataSingUp[getDataId[7]][0]}","{dataSingUp[getDataId[8]][0]}","{dataSingUp[getDataId[9]][0]}","{dataSingUp[getDataId[10]][0]}","{dataSingUp[getDataId[11]][0]}");' 
 
             return insert_command
         
@@ -56,9 +56,6 @@ class DataBaseDelete:
             self.cursor = con.cursor()
             self.cursor.execute(self.delete_data_user())
             con.commit()
-
-            # Implementar adição de dados as id_cadastro para poder excluir os dados no banco de dados apartir do email
-            # Posteriormente deletar os dados pré cadastrados.
 
             print('Dados Excluidos com sucesso!')
 
@@ -80,7 +77,7 @@ class DataBaseDelete:
             dataDelete = personData.get_data_for_singup()
             idCadastro = personData.get_id_cadastros()
 
-            self.delete_command = f'DELETE FROM {db_config['table_user']} WHERE EMAIL = "{dataDelete[idCadastro[4]][0]}";'
+            self.delete_command = f'DELETE FROM {db_config['table_user']} WHERE NOME = "{dataDelete[idCadastro[0]][0]}";'
 
             return self.delete_command
         
@@ -123,7 +120,7 @@ class DataBaseSelect:
             dataSelect = personData.get_data_for_singup()
             idCadastro = personData.get_id_cadastros()
 
-            select_command = f'SELECT * FROM {db_config['table_user']} WHERE EMAIL = "{dataSelect[idCadastro[4]][0]}";'
+            select_command = f'SELECT * FROM {db_config['table_user']} WHERE NOME = "{dataSelect[idCadastro[0]][0]}";'
             return select_command
         
         except IndexError as x:

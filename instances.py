@@ -187,6 +187,8 @@ class MotoristasDados:
 
 
 class PessoaDados:
+    processList = []
+
     __id_cadastro_nome = "NOME"
     __id_cadastro_sobrenome = "SOBRENOME"
     __id_cadastro_data_nascimento = "DATA NASCIMENTO"
@@ -232,7 +234,7 @@ class PessoaDados:
         registerInput = core.getRegisteredInput()
         listDataUser = self.__data_for_signup
 
-        listDataUser[name] = registerInput[id].get()
+        listDataUser[name].append(registerInput[id].get())
 
     def register_inputs(self, valueInput):
         core = AppCore()
@@ -246,15 +248,14 @@ class PessoaDados:
         registerInput = core.getRegisteredInput()
         __listDataUser = self.get_data_for_singup()
 
-        processList = []
-
         for key in __listDataUser:
-            processList.append(key)
-
+            self.processList.append(key)
+        
+        print('passou aqui')
         for i, id in enumerate(registerInput):
             if registerInput[id].get() != '':
-                self.set_data_for_singup(processList[i], id)
-                print(f'{__listDataUser[processList[i]]} --> Pré Carregado')
+                self.set_data_for_singup(self.processList[i], id)
+                print(f'{__listDataUser[self.processList[i]][0]} --> Pré Carregado')
             else:
                 print('PRENENCHA OS CAMPOS!')
 
@@ -264,7 +265,12 @@ class PessoaDados:
         registerInput = core.getRegisteredInput()
         __listDataUser = self.get_data_for_singup()
 
-        __listDataUser.clear()
+        for key in __listDataUser:
+            for id, x in enumerate(__listDataUser[key]):
+                x == None
+                __listDataUser[key].pop(0)
+
+        self.processList.clear()
         
         for i in registerInput:
             registerInput[i].delete(0, 'end')
