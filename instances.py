@@ -3,9 +3,33 @@ from tkinter.filedialog import askdirectory
 from openpyxl.styles import Font, Alignment, PatternFill
 
 class AppCore:
-    __registered_input = {}
-    __registered_windows  = {}
-    __registered_winget = {}
+    __DriverSchedule = 'DriverSchedule'
+    __SingIn = 'SingIn' 
+    __Main = 'Main'
+
+    def getDriverSchedule(self):
+        return self.__DriverSchedule
+    
+    def getSingIn(self):
+        return self.__SingIn
+    
+    def getMain(self):
+        return self.__Main
+
+    __registered_input = {
+        __DriverSchedule: [],
+        __SingIn:         []
+    }
+    __registered_windows  = {
+        __DriverSchedule: [],
+        __SingIn:         [],
+        __Main:           []
+    }
+    __registered_winget = {
+        __DriverSchedule: [],
+        __SingIn:         [],
+        __Main:           []
+    }
 
     def getRegisteredInput(self):
         return self.__registered_input
@@ -17,13 +41,29 @@ class AppCore:
         return self.__registered_winget
     
     def setRegisteredInput(self, id, input):
-        self.__registered_input[id] = input
+        self.__registered_input[id].append(input)
 
     def setRegisteredWindow(self, id, window):
-        self.__registered_windows[id] = window
+        self.__registered_windows[id].append(window)
 
     def setRegisteredWinget(self, id, winget):
-        self.__registered_winget[id] = winget
+        self.__registered_winget[id].append(winget)
+    
+    def unsubscribeInput(self, id):
+        for key in self.__registered_input[id]:
+            key = None
+            self.__registered_input[id].clear()
+
+    def unsubscribeWindow(self, id):
+        for key in self.__registered_windows[id]:
+            key = None
+            self.__registered_windows[id].clear()
+    
+    def unsubscribeWinget(self, id):
+        for key in self.__registered_winget[id]:
+            key = None
+            self.__registered_winget[id].clear()
+
 
 class MotoristasDados:
     __id_name = "NOME MOTORISTA"
@@ -86,18 +126,20 @@ class MotoristasDados:
     def saveSheetInDirectory(self,file):
         core = AppCore()
         registerWinget = core.getRegisteredWinget()
+        key = core.getDriverSchedule()
         directorySave = askdirectory(title='Selecione onde deseja salvar o arquivo')
 
         if directorySave != '':
             file.save(directorySave + '/Horarios Motoristas.xlsx')
-            registerWinget['end_word']['text'] = 'Planilha Gerada!'
+            registerWinget[key][6]['text'] = 'Planilha Gerada!'
 
         else:
-            registerWinget['end_word']['text'] = 'Selecione uma pasta para salvar o arquivo'
+            registerWinget[key][6]['text'] = 'Selecione uma pasta para salvar o arquivo'
 
     def creatSheet(self):
         core = AppCore()
         registerWinget = core.getRegisteredWinget()
+        key = core.getDriverSchedule()
         dataState = self.get_data_state()
         dataName = self.get_id_state()
         cs1 = len(dataState[dataName[0]])
@@ -134,55 +176,51 @@ class MotoristasDados:
             self.saveSheetInDirectory(file)
             self.clearDataBase()
         else:
-            registerWinget['end_word']['text'] = 'Insira todas as informações!'
+            registerWinget[key][6]['text'] = 'Insira todas as informações!'
 
     def insert(self):
         core = AppCore()
         dataState = self.get_data_state()
         dataName = self.get_id_state()
+        key = core.getDriverSchedule()
         self.text_insert = 'Insira as Informações'
 
         listInput = core.getRegisteredInput()
         registerWinget = core.getRegisteredWinget()
 
-        if 'inputValue' in listInput and listInput['inputValue'].get() != '':
-            dataState[dataName[0]].append(listInput['inputValue'].get())
-            listInput['inputValue'].delete(0, 'end')
-            print(dataState[dataName[0]])
+        if listInput[key][0].get() != '':
+            dataState[dataName[0]].append(listInput[key][0].get())
+            listInput[key][0].delete(0, 'end')
         else: 
-            registerWinget['end_word']['text'] = 'Insira todas as informações!'
+            registerWinget[key][6]['text'] = 'Insira todas as informações!'
             self.clearDataBase()
 
-        if 'inputValue2' in listInput and listInput['inputValue2'].get() != '':
-            dataState[dataName[1]].append(listInput['inputValue2'].get())
-            listInput['inputValue2'].delete(0, 'end')
-            print(dataState[dataName[1]])
+        if listInput[key][1].get() != '':
+            dataState[dataName[1]].append(listInput[key][1].get())
+            listInput[key][1].delete(0, 'end')
         else: 
-            registerWinget['end_word']['text'] = 'Insira todas as informações!'
+            registerWinget[key][6]['text'] = 'Insira todas as informações!'
             self.clearDataBase()
 
-        if 'inputValue3' in listInput and listInput['inputValue3'].get() != '':
-            dataState[dataName[2]].append(listInput['inputValue3'].get())
-            listInput['inputValue3'].delete(0, 'end')
-            print(dataState[dataName[2]])
+        if listInput[key][2].get() != '':
+            dataState[dataName[2]].append(listInput[key][2].get())
+            listInput[key][2].delete(0, 'end')
         else: 
-            registerWinget['end_word']['text'] = 'Insira todas as informações!'
+            registerWinget[key][6]['text'] = 'Insira todas as informações!'
             self.clearDataBase()
 
-        if 'inputValue4' in listInput and listInput['inputValue4'].get() != '':
-            dataState[dataName[3]].append(listInput['inputValue4'].get())
-            listInput['inputValue4'].delete(0, 'end')
-            print(dataState[dataName[3]])
+        if listInput[key][3].get() != '':
+            dataState[dataName[3]].append(listInput[key][3].get())
+            listInput[key][3].delete(0, 'end')
         else: 
-            registerWinget['end_word']['text'] = 'Insira todas as informações!'
+            registerWinget[key][6]['text'] = 'Insira todas as informações!'
             self.clearDataBase()
 
-        if 'inputValue5' in listInput and listInput['inputValue5'].get() != '':
-            dataState[dataName[4]].append(listInput['inputValue5'].get())
-            listInput['inputValue5'].delete(0, 'end')
-            print(dataState[dataName[4]])
+        if listInput[key][4].get() != '':
+            dataState[dataName[4]].append(listInput[key][4].get())
+            listInput[key][4].delete(0, 'end')
         else: 
-            registerWinget['end_word']['text'] = 'Insira todas as informações!'
+            registerWinget[key][6]['text'] = 'Insira todas as informações!'
             self.clearDataBase()
 
 
@@ -229,33 +267,30 @@ class PessoaDados:
 
         return __id_cadastros
     
-    def set_data_for_singup(self, name, id):
+    def set_data_for_singup(self, name, key, num):
         core = AppCore()
         registerInput = core.getRegisteredInput()
+
         listDataUser = self.__data_for_signup
 
-        listDataUser[name].append(registerInput[id].get())
-
-    def register_inputs(self, valueInput):
-        core = AppCore()
-        setInput = core.setRegisteredInput
-        setInput(valueInput)
+        listDataUser[name].append(registerInput[key][num].get())
 
     # Acima metodos Get n' Set
     
     def insert(self):
         core = AppCore()
         registerInput = core.getRegisteredInput()
+        key = core.getSingIn()
         __listDataUser = self.get_data_for_singup()
 
-        for key in __listDataUser:
-            self.processList.append(key)
+        for id in __listDataUser:
+            self.processList.append(id)
         
-        print('passou aqui')
-        for i, id in enumerate(registerInput):
-            if registerInput[id].get() != '':
-                self.set_data_for_singup(self.processList[i], id)
-                print(f'{__listDataUser[self.processList[i]][0]} --> Pré Carregado')
+        for i, id in enumerate(registerInput[key]):
+            if registerInput[key][i].get() != '':
+                self.set_data_for_singup(self.processList[i], key, i)
+                print(f'{__listDataUser[self.processList[i]][0]} --> Pré Carregado\n')
+                #print(self.processList[i], key)
             else:
                 print('PRENENCHA OS CAMPOS!')
 
@@ -263,21 +298,25 @@ class PessoaDados:
     def clearData(self):
         core = AppCore()
         registerInput = core.getRegisteredInput()
+        key = core.getSingIn()
         __listDataUser = self.get_data_for_singup()
 
-        for key in __listDataUser:
-            for id, x in enumerate(__listDataUser[key]):
+        for id in __listDataUser:
+            for num, x in enumerate(__listDataUser[id]): # retirar laço for
                 x == None
-                __listDataUser[key].pop(0)
+                __listDataUser[id].pop(0)
 
         self.processList.clear()
         
-        for i in registerInput:
-            registerInput[i].delete(0, 'end')
+        for num, x in enumerate(registerInput[key]):
+            registerInput[key][num].delete(0, 'end')
         
         print('INSIRA TODAS AS INSFORMAÇÕES\nINTERFACE LIMPA\n')
 
 class ConsoleRedirect:
+    core = AppCore()
+    windowR = core.getRegisteredWindow()
+    key = core.getMain()
 
     def __init__(self, text_widget):
         self.text_widget = text_widget

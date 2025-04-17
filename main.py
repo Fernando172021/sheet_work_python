@@ -2,6 +2,7 @@ from instances import AppCore
 from sing_in import Sing_in
 from style import *
 from tkinter import *
+from tkinter import messagebox
 from DriverSchedule import DriverSchedule
 
 class MainApplication:
@@ -15,12 +16,12 @@ class MainApplication:
         self.Window.iconbitmap(iconImage)
         self.Window.resizable(False, False)
         self.Window.config(bg = colorWindowStandart)
-        register_window('main_window', self.Window)
+        register_window('Main', self.Window)
 
         self.titleH1 = Label(self.Window, text='GERADOR DE PLANILHAS')
         self.titleH1['font'] = fontText
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
-        register_winget('main_titleH1', self.titleH1)
+        register_winget('Main', self.titleH1)
 
         self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= DriverSchedule)
         self.button1['font'] = fontText
@@ -46,6 +47,16 @@ class MainApplication:
         self.buttonD['font'] = fontText
         self.buttonD.grid(column= 20, row= 3, padx= buttonPadx, pady= buttonPady)
 
+        self.Window.protocol("WM_DELETE_WINDOW", self.close)
+
         self.Window.mainloop()
+    
+    def close(self):
+        core = AppCore()
+        if messagebox.askokcancel('Sair', 'Você Quer Sair?'):
+            core.unsubscribeWindow('Main')
+            core.unsubscribeWinget('Main')
+
+            self.Window.destroy()
 
 mainApplication = MainApplication()
