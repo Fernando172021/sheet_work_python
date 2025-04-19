@@ -1,8 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
-from instances import PessoaDados, ConsoleRedirect, AppCore
+from Instances import PessoaDados, ConsoleRedirect, AppCore
 from DataBaseConnection import DataBaseInsert, DataBaseDelete, DataBaseSelect
-from style import StyleWindows
+from Style import StyleWindows
 import sys
 
 class Sing_in:

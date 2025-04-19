@@ -1,5 +1,5 @@
-from instances import MotoristasDados, AppCore
-from style import *
+from Instances import MotoristasDados, AppCore
+from Style import *
 from tkinter import *
 from tkinter import messagebox
 

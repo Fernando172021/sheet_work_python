@@ -1,17 +1,17 @@
-from instances import AppCore
+from Instances import AppCore
 
 class StyleWindows:
     __iconImage = 'midia/favicon.ico'
 
     def getIconImage(self):
         return self.__iconImage
+    
+    #-------------------------------------------------------------------
 
     __buttonsHeight = 5
     __buttonsWidth  = 30
     __buttonPadx    = 30
     __buttonPady    = 15
-
-    # Metodos Get a baixo
 
     def getButtonHeight(self):
         return self.__buttonsHeight
@@ -25,18 +25,20 @@ class StyleWindows:
     def getButtonPadY(self):
         return self.__buttonPady 
     
+    #-------------------------------------------------------------------
+    
     __entryWidth = 30
 
     def getEntryWidth(self):
         return self.__entryWidth
+    
+    #-------------------------------------------------------------------
 
     __backgroundcolorWidget = '#f0f8ff'
     __backgroundcolorFont   = '#ffffff'
     __fontColorConsole = '#000000'
     __fontFamilyConsole = ('Consolas', '12', 'bold')  
     __fontText = ('Arial', '10', 'bold')
-
-    # Metodos Get a baixo
 
     def getBackGroundColorWidget(self):
         return self.__backgroundcolorWidget
@@ -52,14 +54,14 @@ class StyleWindows:
     
     def getFontText(self):
         return self.__fontText
+    
+    #-------------------------------------------------------------------
 
     __border = 3
     __buttonsWidth = 18
     __entryWidth = 25
     __padY = 10
     __padX = 5  
-
-    # Metodos Get a baixo
 
     def getBorder(self):
         return self.__border
@@ -75,6 +77,8 @@ class StyleWindows:
     
     def getPadX(self):
         return self.__padX
+    
+    #-------------------------------------------------------------------
 
     __color_window = {
         'White': ['#ffffff'],
@@ -87,6 +91,8 @@ class StyleWindows:
     def getColorWindowStandart(self):
         colorWindowStandart = self.getColorWindow()['White']
         return colorWindowStandart
+    
+    #-------------------------------------------------------------------
 
     def update_window_colors(self, color):
         core = AppCore()
@@ -109,7 +115,7 @@ class StyleWindows:
         for key in registered_winget:
                 for winget in registered_windows[key]:
                     winget.configure(bg = colorWindowStandart)
-                    if color == 'White':
+                    if color == 'White': 
                         winget.configure(fg = '#000000')
                     if color == 'Dark':
                         winget.configure(fg = '#ffffff')

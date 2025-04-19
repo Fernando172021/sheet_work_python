@@ -1,5 +1,5 @@
 from DataBaseConfig import *
-from instances import PessoaDados
+from Instances import PessoaDados
 import pymysql
 
 class DataBaseInsert:
