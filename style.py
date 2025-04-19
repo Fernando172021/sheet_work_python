@@ -1,55 +1,121 @@
 from instances import AppCore
 
-iconImage = 'midia/favicon.ico'
+class StyleWindows:
+    __iconImage = 'midia/favicon.ico'
 
-buttonsHeight = 5
-buttonsWidth  = 30
-buttonPadx    = 30
-buttonPady    = 15
+    def getIconImage(self):
+        return self.__iconImage
 
-backgroundcolorWidget = '#f0f8ff'
-backgroundcolorFont   = '#ffffff'
-fontColorConsole = '#000000'
-fontFamilyConsole = ('Consolas', '12', 'bold')  
-fontText = ('Arial', '10', 'bold')
-border = 3
-buttonsWidth = 18
-entryWidth = 25
-padY = 10
-padX = 5   
+    __buttonsHeight = 5
+    __buttonsWidth  = 30
+    __buttonPadx    = 30
+    __buttonPady    = 15
 
-color_window = {
-    'White': ['#ffffff'],
-    'Dark':  ['#000000'],
-}
+    # Metodos Get a baixo
 
-colorWindowStandart = color_window['White']
-
-def update_window_colors(color):
-    core = AppCore()
-    registered_windows = core.getRegisteredWindow()
-    registered_winget = core.getRegisteredWinget()
+    def getButtonHeight(self):
+        return self.__buttonsHeight
     
-    global colorWindowStandart
+    def getButtonWidth(self):
+        return self.__buttonsWidth
+    
+    def getButtonPadX(self):
+        return self.__buttonPadx
+    
+    def getButtonPadY(self):
+        return self.__buttonPady 
+    
+    __entryWidth = 30
 
-    for mode in color_window.keys():
-        if mode and color == 'White':
-            colorWindowStandart = color_window['White']
-        elif mode and color == 'Dark':
-            colorWindowStandart = color_window['Dark']
+    def getEntryWidth(self):
+        return self.__entryWidth
+
+    __backgroundcolorWidget = '#f0f8ff'
+    __backgroundcolorFont   = '#ffffff'
+    __fontColorConsole = '#000000'
+    __fontFamilyConsole = ('Consolas', '12', 'bold')  
+    __fontText = ('Arial', '10', 'bold')
+
+    # Metodos Get a baixo
+
+    def getBackGroundColorWidget(self):
+        return self.__backgroundcolorWidget
+    
+    def getBackGroundColorFont(self):
+        return self.__backgroundcolorFont
+    
+    def getFontColorConsole(self):
+        return self.__fontColorConsole
+    
+    def getFontFamilyConsole(self):
+        return self.__fontFamilyConsole
+    
+    def getFontText(self):
+        return self.__fontText
+
+    __border = 3
+    __buttonsWidth = 18
+    __entryWidth = 25
+    __padY = 10
+    __padX = 5  
+
+    # Metodos Get a baixo
+
+    def getBorder(self):
+        return self.__border
+    
+    def getButtonsWidth(self):
+        return self.__buttonsWidth
+    
+    def getEntryWidth(self):
+        return self.__entryWidth
+    
+    def getPadY(self):
+        return self.__padY
+    
+    def getPadX(self):
+        return self.__padX
+
+    __color_window = {
+        'White': ['#ffffff'],
+        'Dark':  ['#000000'],
+    }
+
+    def getColorWindow(self):
+        return self.__color_window
+
+    def getColorWindowStandart(self):
+        colorWindowStandart = self.getColorWindow()['White']
+        return colorWindowStandart
+
+    def update_window_colors(self, color):
+        core = AppCore()
+        registered_windows = core.getRegisteredWindow()
+        registered_winget = core.getRegisteredWinget()
+        colorWindow = self.getColorWindow()
+    
+        global colorWindowStandart
+
+        for mode in colorWindow.keys():
+            if mode and color == 'White':
+                colorWindowStandart = colorWindow['White']
+            elif mode and color == 'Dark':
+                colorWindowStandart = colorWindow['Dark']
         
-        for window in registered_windows:
-            window.configure(bg = colorWindowStandart)
+            for key in registered_windows:
+                for window in registered_windows[key]:
+                    window.configure(bg = colorWindowStandart)
 
-    for winget in registered_winget:
-                winget.configure(bg = colorWindowStandart)
-                if color == 'White':
-                    winget.configure(fg = '#000000')
-                if color == 'Dark':
-                    winget.configure(fg = '#ffffff')
+        for key in registered_winget:
+                for winget in registered_windows[key]:
+                    winget.configure(bg = colorWindowStandart)
+                    if color == 'White':
+                        winget.configure(fg = '#000000')
+                    if color == 'Dark':
+                        winget.configure(fg = '#ffffff')
 
-def checkColorWhite():
-    update_window_colors('White')
+    def checkColorWhite(self):
+        self.update_window_colors('White')
 
-def checkColorDark():
-    update_window_colors('Dark')
+    def checkColorDark(self):
+        self.update_window_colors('Dark')

@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from instances import PessoaDados, ConsoleRedirect, AppCore
 from DataBaseConnection import DataBaseInsert, DataBaseDelete, DataBaseSelect
-from style import *
+from style import StyleWindows
 import sys
 
 class Sing_in:
@@ -10,6 +10,7 @@ class Sing_in:
 
         person = PessoaDados()
         core = AppCore()
+        styleWindows = StyleWindows()
         dataBaseInsert = DataBaseInsert
         dataBaseDelete = DataBaseDelete
         dataBaseSelect = DataBaseSelect
@@ -17,6 +18,19 @@ class Sing_in:
         register_window = core.setRegisteredWindow
         register_winget = core.setRegisteredWinget
         id_cadastros = person.get_id_cadastros()
+
+        iconImage = styleWindows.getIconImage()
+        colorWindowStandart = styleWindows.getColorWindowStandart()
+        fontText = styleWindows.getFontText()
+        buttonsWidth = styleWindows.getButtonsWidth()
+        border = styleWindows.getBorder()
+        buttonPadx = styleWindows.getButtonPadX()
+        buttonPady = styleWindows.getButtonPadY()
+        padX = styleWindows.getPadX()
+        padY = styleWindows.getPadY()
+        backgroundcolorWidget = styleWindows.getBackGroundColorWidget()
+        fontColorConsole = styleWindows.getFontColorConsole()
+        fontFamilyConsole = styleWindows.getFontFamilyConsole()
         
         self.window = Tk()
         self.window.title('Cadastro')

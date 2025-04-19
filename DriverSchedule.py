@@ -8,12 +8,24 @@ class DriverSchedule:
         def __init__(self):
             core = AppCore()
             driver = MotoristasDados()
+            styleWindows = StyleWindows()
             register_window = core.setRegisteredWindow
             register_winget = core.setRegisteredWinget
             register_input = core.setRegisteredInput
             listName = driver.get_id_state()
             insert = driver.insert
             creatSheet = driver.creatSheet
+
+            iconImage = styleWindows.getIconImage()
+            colorWindowStandart = styleWindows.getColorWindowStandart()
+            fontText = styleWindows.getFontText()
+            buttonsWidth = styleWindows.getButtonsWidth()
+            border = styleWindows.getBorder()
+            padX = styleWindows.getPadX()
+            padY = styleWindows.getPadY()
+            backgroundcolorWidget = styleWindows.getBackGroundColorWidget()
+            backgroundcolorFont = styleWindows.getBackGroundColorFont()
+            entryWidth = styleWindows.getEntryWidth()
 
             self.window = Tk()
             self.window.title('HR - Motorista') 

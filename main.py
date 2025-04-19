@@ -1,6 +1,6 @@
 from instances import AppCore
-from sing_in import Sing_in
-from style import *
+from SingIn import Sing_in
+from style import StyleWindows
 from tkinter import *
 from tkinter import messagebox
 from DriverSchedule import DriverSchedule
@@ -8,8 +8,21 @@ from DriverSchedule import DriverSchedule
 class MainApplication:
     def __init__(self):
         core = AppCore()
+        styleWindows = StyleWindows()
         register_window = core.setRegisteredWindow
         register_winget = core.setRegisteredWinget
+
+        iconImage = styleWindows.getIconImage()
+        colorWindowStandart = styleWindows.getColorWindowStandart()
+        fontText = styleWindows.getFontText()
+        buttonsWidth = styleWindows.getButtonsWidth()
+        buttonsHeight = styleWindows.getButtonHeight()
+        border = styleWindows.getBorder()
+        buttonPadx = styleWindows.getButtonPadX()
+        buttonPady = styleWindows.getButtonPadY()
+
+        checkColorWhite = styleWindows.checkColorWhite
+        checkColorDark = styleWindows.checkColorDark
         
         self.Window = Tk()
         self.Window.title('Gerador de Planilhas')
