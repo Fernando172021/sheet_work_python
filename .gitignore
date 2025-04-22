@@ -8,5 +8,8 @@ config.local.json
 
 # Ignorar diretórios específicos
 /__pycache__/
-
+/app/__pycache__/
+/dataBase/__pycache__/
+/logic/__pycache__/
+/style/__pycache__/
 /virtualEnv/

@@ -1,4 +1,4 @@
-from Instances import AppCore
+from logic.AppCore import AppCore
 
 class StyleWindows:
     __iconImage = 'midia/favicon.ico'

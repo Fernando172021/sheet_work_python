@@ -1,14 +1,18 @@
 from tkinter import *
 from tkinter import messagebox
-from Instances import PessoaDados, ConsoleRedirect, AppCore
-from DataBaseConnection import DataBaseInsert, DataBaseDelete, DataBaseSelect
-from Style import StyleWindows
+from logic.ConsoleRedirect import ConsoleRedirect
+from logic.DataPerson import DataPerson
+from logic.AppCore import AppCore
+from dataBase.DataBaseInsert import DataBaseInsert
+from dataBase.DataBaseDelete import DataBaseDelete
+from dataBase.DataBaseSelect import DataBaseSelect
+from style.Style import StyleWindows
 import sys
 
 class Sing_in:
     def __init__(self):
 
-        person = PessoaDados()
+        person = DataPerson()
         core = AppCore()
         styleWindows = StyleWindows()
         dataBaseInsert = DataBaseInsert

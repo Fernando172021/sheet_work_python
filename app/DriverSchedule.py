@@ -1,13 +1,13 @@
-from Instances import MotoristasDados, AppCore
-from Style import *
+from logic.DataDrivers import DataDriver
+from logic.AppCore import AppCore
+from style.Style import StyleWindows
 from tkinter import *
 from tkinter import messagebox
-
 
 class DriverSchedule:
         def __init__(self):
             core = AppCore()
-            driver = MotoristasDados()
+            driver = DataDriver()
             styleWindows = StyleWindows()
             register_window = core.setRegisteredWindow
             register_winget = core.setRegisteredWinget

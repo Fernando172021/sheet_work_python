@@ -1,11 +1,11 @@
-from Instances import AppCore
-from SingIn import Sing_in
-from Style import StyleWindows
+from logic.AppCore import AppCore
+from app.SingIn import Sing_in
+from style.Style import StyleWindows
 from tkinter import *
 from tkinter import messagebox
-from DriverSchedule import DriverSchedule
+from app.DriverSchedule import DriverSchedule
 
-class MainApplication:
+class Main:
     def __init__(self):
         core = AppCore()
         styleWindows = StyleWindows()
@@ -71,5 +71,3 @@ class MainApplication:
             core.unsubscribeWinget('Main')
 
             self.Window.destroy()
-
-mainApplication = MainApplication()
