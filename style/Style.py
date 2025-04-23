@@ -113,12 +113,12 @@ class StyleWindows:
                     window.configure(bg = colorWindowStandart)
 
         for key in registered_winget:
-                for winget in registered_windows[key]:
+                for winget in registered_winget[key]:
                     winget.configure(bg = colorWindowStandart)
                     if color == 'White': 
-                        winget.configure(fg = '#000000')
+                        winget.config(fg = '#000000')
                     if color == 'Dark':
-                        winget.configure(fg = '#ffffff')
+                        winget.config(fg = '#ffffff')
 
     def checkColorWhite(self):
         self.update_window_colors('White')
