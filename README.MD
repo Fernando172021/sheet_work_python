@@ -25,6 +25,18 @@ pyinstaller --onefile -w nome do arquivo com extenção {para programas com jane
 
 pyinstaller --onefile nome do arquivo com extenção {para programas cmd}
 
+pyinstaller --add-data="" caminho total da pasta;nome da pasta
+
+pyinstaller --add-data="" caminho total do arquivo
+
+pyinstaller --add-data="" caminho total do arquivo/pasta:pasta onde ficara o arquivo/pasta
+
+pyinstaller --name="" Nome do arquivo executavel
+
+pyinstaller --noconsole 
+
+pyinstaller --icon="" caminho total do arquivo
+
 -----------------------------------------
 
 lista de comandos do GIT

@@ -1,8 +1,7 @@
 from logic.AppCore import AppCore
 from app.SingIn import Sing_in
 from style.Style import StyleWindows
-from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox, Tk, Label, Button
 from app.DriverSchedule import DriverSchedule
 
 class Main:

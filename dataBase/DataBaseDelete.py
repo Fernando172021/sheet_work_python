@@ -1,4 +1,4 @@
-from dataBase.DataBaseConfig import *
+from dataBase.DataBaseConfig import db_config
 from logic.DataPerson import DataPerson
 import pymysql
 

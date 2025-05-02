@@ -1,8 +1,7 @@
 from logic.DataDrivers import DataDriver
 from logic.AppCore import AppCore
 from style.Style import StyleWindows
-from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox, Tk, Label, Entry, Button
 
 class DriverSchedule:
         def __init__(self):

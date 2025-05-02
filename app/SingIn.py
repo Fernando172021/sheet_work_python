@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox, Tk, Label, Entry, Button, Text, NORMAL
 from logic.ConsoleRedirect import ConsoleRedirect
 from logic.DataPerson import DataPerson
 from logic.AppCore import AppCore
