@@ -14,12 +14,7 @@ class Main:
         iconImage = styleWindows.getIconImage()
         colorWindowStandart = styleWindows.getColorWindowStandart()
         fgColor = styleWindows.getFgWingetStandart()
-        fontText = styleWindows.getFontText()
-        buttonsWidth = styleWindows.getButtonsWidth()
-        buttonsHeight = styleWindows.getButtonHeight()
-        border = styleWindows.getBorder()
-        buttonPadx = styleWindows.getButtonPadX()
-        buttonPady = styleWindows.getButtonPadY()
+        styleConfig = styleWindows.getStyleConfig()
         styleWindows.modeWinget(colorWindowStandart)
 
         checkColorWhite = styleWindows.checkColorWhite
@@ -35,33 +30,33 @@ class Main:
         self.titleH1 = Label(self.Window, text='GERADOR DE PLANILHAS')
         self.titleH1.config(bg = colorWindowStandart)
         self.titleH1.config(fg = fgColor)
-        self.titleH1['font'] = fontText
+        self.titleH1['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
         register_winget('Main', self.titleH1)
 
-        self.button1 = Button(text='HORARIO MOTORISTA', width= buttonsWidth, height= buttonsHeight, bd= border, command= DriverSchedule)
-        self.button1['font'] = fontText
-        self.button1.grid(column= 10, row= 1, padx= buttonPadx, pady= buttonPady)
+        self.button1 = Button(text='HORARIO MOTORISTA', width= styleConfig[styleWindows.getButtonsWidth()], height= styleConfig[styleWindows.getButtonsHeight()], bd= styleConfig[styleWindows.getBorder()], command= DriverSchedule)
+        self.button1['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.button1.grid(column= 10, row= 1, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.button2 = Button(text='CADASTRO', width= buttonsWidth, height= buttonsHeight, bd= border, command= Sing_in)
-        self.button2['font'] = fontText
-        self.button2.grid(column= 20, row= 1, padx= buttonPadx, pady= buttonPady)
+        self.button2 = Button(text='CADASTRO', width= styleConfig[styleWindows.getButtonsWidth()], height= styleConfig[styleWindows.getButtonsHeight()], bd= styleConfig[styleWindows.getBorder()], command= Sing_in)
+        self.button2['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.button2.grid(column= 20, row= 1, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.button3 = Button(text='BUTTON_3', width= buttonsWidth, height= buttonsHeight, bd= border)
-        self.button3['font'] = fontText
-        self.button3.grid(column= 10, row= 2, padx= buttonPadx, pady= buttonPady)
+        self.button3 = Button(text='BUTTON_3', width= styleConfig[styleWindows.getButtonsWidth()], height= styleConfig[styleWindows.getButtonsHeight()], bd= styleConfig[styleWindows.getBorder()])
+        self.button3['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.button3.grid(column= 10, row= 2, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.button4 = Button(text='BUTTON_4', width= buttonsWidth, height= buttonsHeight,bd= border)
-        self.button4['font'] = fontText
-        self.button4.grid(column= 20, row= 2, padx= buttonPadx, pady= buttonPady)
+        self.button4 = Button(text='BUTTON_4', width= styleConfig[styleWindows.getButtonsWidth()], height= styleConfig[styleWindows.getButtonsHeight()],bd= styleConfig[styleWindows.getBorder()])
+        self.button4['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.button4.grid(column= 20, row= 2, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.buttonW = Button(text='Claro', width= buttonsWidth, height= 2, bd= border, command= checkColorWhite)
-        self.buttonW['font'] = fontText
-        self.buttonW.grid(column= 10, row= 3, padx= buttonPadx, pady= buttonPady)
+        self.buttonW = Button(text='Claro', width= styleConfig[styleWindows.getButtonsWidth()], height= 2, bd= styleConfig[styleWindows.getBorder()], command= checkColorWhite)
+        self.buttonW['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.buttonW.grid(column= 10, row= 3, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.buttonD = Button(text='Escuro', width= buttonsWidth, height= 2, bd= border, command= checkColorDark)
-        self.buttonD['font'] = fontText
-        self.buttonD.grid(column= 20, row= 3, padx= buttonPadx, pady= buttonPady)
+        self.buttonD = Button(text='Escuro', width= styleConfig[styleWindows.getButtonsWidth()], height= 2, bd= styleConfig[styleWindows.getBorder()], command= checkColorDark)
+        self.buttonD['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.buttonD.grid(column= 20, row= 3, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
         self.Window.protocol("WM_DELETE_WINDOW", self.close)
 

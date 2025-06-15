@@ -24,17 +24,8 @@ class Sing_in:
 
         iconImage = styleWindows.getIconImage()
         colorWindowStandart = styleWindows.getColorWindowStandart()
+        styleConfig = styleWindows.getStyleConfig()
         fgColor = styleWindows.getFgWingetStandart()
-        fontText = styleWindows.getFontText()
-        buttonsWidth = styleWindows.getButtonsWidth()
-        border = styleWindows.getBorder()
-        buttonPadx = styleWindows.getButtonPadX()
-        buttonPady = styleWindows.getButtonPadY()
-        padX = styleWindows.getPadX()
-        padY = styleWindows.getPadY()
-        backgroundcolorWidget = styleWindows.getBackGroundColorWidget()
-        fontColorConsole = styleWindows.getFontColorConsole()
-        fontFamilyConsole = styleWindows.getFontFamilyConsole()
         
         self.window = Tk()
         self.window.title('Cadastro')
@@ -46,182 +37,182 @@ class Sing_in:
         self.label0 = Label(self.window, text= 'INSIRA OS SEUS DADOS A BAIXO', width= 40)
         self.label0.config(bg = colorWindowStandart)
         self.label0.config(fg = fgColor)
-        self.label0['font'] = fontText
-        self.label0.grid(row= 0, column= 1, padx= padX, pady= padY)
+        self.label0['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label0.grid(row= 0, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label0)
 
         self.label1 = Label(self.window, text= id_cadastros[0], width= 40)
         self.label1.config(bg = colorWindowStandart)
         self.label1.config(fg = fgColor)
-        self.label1['font'] = fontText
-        self.label1.grid(row= 1, column= 0, padx= padX, pady= padY)
+        self.label1['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label1.grid(row= 1, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label1)
 
-        self.input1 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input1['font'] = fontText
-        self.input1.grid(row= 2, column= 0, padx= padX, pady= padY)
+        self.input1 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input1['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input1.grid(row= 2, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input1)
 
         self.label2 = Label(self.window, text= id_cadastros[1], width= 40)
         self.label2.config(bg = colorWindowStandart)
         self.label2.config(fg = fgColor)
-        self.label2['font'] = fontText
-        self.label2.grid(row= 1, column= 1, padx= padX, pady= padY)
+        self.label2['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label2.grid(row= 1, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label2)
 
-        self.input2 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input2['font'] = fontText
-        self.input2.grid(row= 2, column= 1, padx= padX, pady= padY)
+        self.input2 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input2['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input2.grid(row= 2, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input2)
 
         self.label3 = Label(self.window, text= id_cadastros[2], width= 40)
         self.label3.config(bg = colorWindowStandart)
         self.label3.config(fg = fgColor)
-        self.label3['font'] = fontText
-        self.label3.grid(row= 1, column= 2, padx= padX, pady= padY)
+        self.label3['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label3.grid(row= 1, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label3)
 
-        self.input3 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input3['font'] = fontText
-        self.input3.grid(row= 2, column= 2, padx= padX, pady= padY)
+        self.input3 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input3['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input3.grid(row= 2, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input3)
 
         self.label4 = Label(self.window, text= id_cadastros[3], width= 40)
         self.label4.config(bg = colorWindowStandart)
         self.label4.config(fg = fgColor)
-        self.label4['font'] = fontText
-        self.label4.grid(row= 3, column= 0, padx= padX, pady= padY)
+        self.label4['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label4.grid(row= 3, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label4)
 
-        self.input4 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input4['font'] = fontText
-        self.input4.grid(row= 4, column= 0, padx= padX, pady= padY)
+        self.input4 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input4['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input4.grid(row= 4, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input4)
 
         self.label5 = Label(self.window, text= id_cadastros[4], width= 40)
         self.label5.config(bg = colorWindowStandart)
         self.label5.config(fg = fgColor)
-        self.label5['font'] = fontText
-        self.label5.grid(row= 3, column= 1, padx= padX, pady= padY)
+        self.label5['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label5.grid(row= 3, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label5)
 
-        self.input5 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input5['font'] = fontText
-        self.input5.grid(row= 4, column= 1, padx= padX, pady= padY)
+        self.input5 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input5['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input5.grid(row= 4, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input5)
 
         self.label6 = Label(self.window, text= id_cadastros[5], width= 40)
         self.label6.config(bg = colorWindowStandart)
         self.label6.config(fg = fgColor)
-        self.label6['font'] = fontText
-        self.label6.grid(row= 3, column= 2, padx= padX, pady= padY)
+        self.label6['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label6.grid(row= 3, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label6)
 
-        self.input6 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input6['font'] = fontText
-        self.input6.grid(row= 4, column= 2, padx= padX, pady= padY)
+        self.input6 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input6['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input6.grid(row= 4, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input6)
 
         self.label7 = Label(self.window, text= id_cadastros[6], width= 40)
         self.label7.config(bg = colorWindowStandart)
         self.label7.config(fg = fgColor)
-        self.label7['font'] = fontText
-        self.label7.grid(row= 5, column= 0, padx= padX, pady= padY)
+        self.label7['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label7.grid(row= 5, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label7)
 
-        self.input7 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input7['font'] = fontText
-        self.input7.grid(row= 6, column= 0, padx= padX, pady= padY)
+        self.input7 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input7['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input7.grid(row= 6, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input7)
 
         self.label8 = Label(self.window, text= id_cadastros[7], width= 40)
         self.label8.config(bg = colorWindowStandart)
         self.label8.config(fg = fgColor)
-        self.label8['font'] = fontText
-        self.label8.grid(row= 5, column= 1, padx= padX, pady= padY)
+        self.label8['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label8.grid(row= 5, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label8)
 
-        self.input8 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input8['font'] = fontText
-        self.input8.grid(row= 6, column= 1, padx= padX, pady= padY)
+        self.input8 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input8['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input8.grid(row= 6, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input8)
 
         self.label9 = Label(self.window, text= id_cadastros[8], width= 40)
         self.label9.config(bg = colorWindowStandart)
         self.label9.config(fg = fgColor)
-        self.label9['font'] = fontText
-        self.label9.grid(row= 5, column= 2, padx= padX, pady= padY)
+        self.label9['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label9.grid(row= 5, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label9)
 
-        self.input9 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input9['font'] = fontText
-        self.input9.grid(row= 6, column= 2, padx= padX, pady= padY)
+        self.input9 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input9['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input9.grid(row= 6, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input9)
 
         self.label10 = Label(self.window, text= id_cadastros[9], width= 40)
         self.label10.config(bg = colorWindowStandart)
         self.label10.config(fg = fgColor)
-        self.label10['font'] = fontText
-        self.label10.grid(row= 7, column= 0, padx= padX, pady= padY)
+        self.label10['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label10.grid(row= 7, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label10)
 
-        self.input10 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input10['font'] = fontText
-        self.input10.grid(row= 8, column= 0, padx= padX, pady= padY)
+        self.input10 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input10['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input10.grid(row= 8, column= 0, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input10)
 
         self.label11 = Label(self.window, text= id_cadastros[10], width= 40)
         self.label11.config(bg = colorWindowStandart)
         self.label11.config(fg = fgColor)
-        self.label11['font'] = fontText
-        self.label11.grid(row= 7, column= 1, padx= padX, pady= padY)
+        self.label11['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label11.grid(row= 7, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label11)
 
-        self.input11 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input11['font'] = fontText
-        self.input11.grid(row= 8, column= 1, padx= padX, pady= padY)
+        self.input11 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input11['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input11.grid(row= 8, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input11)
 
         self.label12 = Label(self.window, text= id_cadastros[11], width= 40)
         self.label12.config(bg = colorWindowStandart)
         self.label12.config(fg = fgColor)
-        self.label12['font'] = fontText
-        self.label12.grid(row= 7, column= 2, padx= padX, pady= padY)
+        self.label12['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.label12.grid(row= 7, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_winget('SingIn', self.label12)
 
-        self.input12 = Entry(self.window, bd= border, bg= backgroundcolorWidget, width= 30)
-        self.input12['font'] = fontText
-        self.input12.grid(row= 8, column= 2, padx= padX, pady= padY)
+        self.input12 = Entry(self.window, bd= styleConfig[styleWindows.getBorder()], bg= styleConfig[styleWindows.getBackGroundColorWidget()], width= 30)
+        self.input12['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.input12.grid(row= 8, column= 2, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
         register_inputs('SingIn', self.input12)
 
         self.labelText = Label(self.window, text= 'Para PESQUISAR / DELETAR digite o Nome aperte CADASTRAR e em seguida as opções anteriores.')
         self.labelText.config(bg = colorWindowStandart)
         self.labelText.config(fg = fgColor)
-        self.labelText['font'] = fontText
-        self.labelText.grid(row= 9, column= 1, padx= padX, pady= padY)
+        self.labelText['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.labelText.grid(row= 9, column= 1, padx= styleConfig[styleWindows.getPadX()], pady= styleConfig[styleWindows.getPadY()])
 
-        self.buttonClear = Button(self.window, text= 'LIMPAR', width= buttonsWidth, height= 2, bd= border, command= person.clearData)
-        self.buttonClear['font'] = fontText
-        self.buttonClear.grid(row= 10, column= 0, padx= buttonPadx, pady= buttonPady)
+        self.buttonClear = Button(self.window, text= 'LIMPAR', width= styleConfig[styleWindows.getButtonWidth()], height= 2, bd= styleConfig[styleWindows.getBorder()], command= person.clearData)
+        self.buttonClear['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.buttonClear.grid(row= 10, column= 0, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.buttonUp = Button(self.window, text= 'CADASTRAR', width= buttonsWidth, height= 2, bd= border, command= person.insert)
-        self.buttonUp['font'] = fontText
-        self.buttonUp.grid(row= 10, column= 1, padx= buttonPadx, pady= buttonPady)
+        self.buttonUp = Button(self.window, text= 'CADASTRAR', width= styleConfig[styleWindows.getButtonWidth()], height= 2, bd= styleConfig[styleWindows.getBorder()], command= person.insert)
+        self.buttonUp['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.buttonUp.grid(row= 10, column= 1, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.buttonSingIn = Button(self.window, text= 'APLICAR', width= buttonsWidth, height= 2, bd= border, command= dataBaseInsert)
-        self.buttonSingIn['font'] = fontText
-        self.buttonSingIn.grid(row= 10, column= 2, padx= buttonPadx, pady= buttonPady)
+        self.buttonSingIn = Button(self.window, text= 'APLICAR', width= styleConfig[styleWindows.getButtonWidth()], height= 2, bd= styleConfig[styleWindows.getBorder()], command= dataBaseInsert)
+        self.buttonSingIn['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.buttonSingIn.grid(row= 10, column= 2, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.buttonSearch = Button(self.window, text= 'PESQUISA', width= buttonsWidth, height= 2, bd= border, command= dataBaseSelect)
-        self.buttonSearch['font'] = fontText
-        self.buttonSearch.grid(row= 11, column= 0, padx= buttonPadx, pady= buttonPady)
+        self.buttonSearch = Button(self.window, text= 'PESQUISA', width= styleConfig[styleWindows.getButtonWidth()], height= 2, bd= styleConfig[styleWindows.getBorder()], command= dataBaseSelect)
+        self.buttonSearch['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.buttonSearch.grid(row= 11, column= 0, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.buttonDelete = Button(self.window, text= 'DELETAR', width= buttonsWidth, height= 2, bd= border, command= dataBaseDelete)
-        self.buttonDelete['font'] = fontText
-        self.buttonDelete.grid(row= 11, column= 2, padx= buttonPadx, pady= buttonPady)
+        self.buttonDelete = Button(self.window, text= 'DELETAR', width= styleConfig[styleWindows.getButtonWidth()], height= 2, bd= styleConfig[styleWindows.getBorder()], command= dataBaseDelete)
+        self.buttonDelete['font'] = styleConfig[styleWindows.getFontText()], styleConfig[styleWindows.getFontSize()], styleConfig[styleWindows.getFontBold()]
+        self.buttonDelete.grid(row= 11, column= 2, padx= styleConfig[styleWindows.getButtonPadX()], pady= styleConfig[styleWindows.getButtonPadY()])
 
-        self.console_output = Text(self.window, height= 10, width= 70, state= NORMAL, fg= fontColorConsole, bg= '#f7f7f7')
-        self.console_output['font'] = fontFamilyConsole
+        self.console_output = Text(self.window, height= 10, width= 70, state= NORMAL, fg= styleConfig[styleWindows.getFontColorConsole()], bg= '#f7f7f7')
+        self.console_output['font'] = styleConfig[styleWindows.getFontTextConsole()], styleConfig[styleWindows.getFontSizeConsole()], styleConfig[styleWindows.getFontBoldConsole()]
         self.console_output.grid(row= 11, column= 1)
 
         sys.stdout = ConsoleRedirect(self.console_output)

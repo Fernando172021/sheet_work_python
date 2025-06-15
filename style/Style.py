@@ -4,18 +4,45 @@ class StyleWindows:
     core = AppCore()
 
     __iconImage = 'midia/favicon.ico'
+    __configStyleJson = 'json\\configStyle.json'
+    __white = 'colorWhite'
+    __black = 'colorBlack'
+    __colorDefault = 'colorDefault'
+    __fg_default = 'fg_default'
+    __border = "border"
+    __buttonsWidth = "buttonsWidth"
+    __entryWidth = "entryWidth"
+    __padY = "padY"
+    __padX = "padX" 
+    __buttonsHeight = "buttonsHeight"
+    __buttonPadx    = "buttonPadx"
+    __buttonPady    = "buttonPady"
+    __backgroundcolorWidget = "backgroundcolorWidget"
+    __backgroundcolorFont   = "backgroundcolorFont"
+    __fontColorConsole = "fontColorConsole" 
+    __fontText = "fontText"
+    __fontSize = "fontSize"
+    __fontBold = "fontBold"
+    __fontTextConsole = "fontTextConsole"
+    __fontSizeConsole = "fontSizeConsole"
+    __fontBoldConsole = "fontBoldConsole"
 
     def getIconImage(self):
         return self.__iconImage
+
+    def getBackGroundColorWidget(self):
+        return self.__backgroundcolorWidget
     
-    #-------------------------------------------------------------------
-
-    __buttonsHeight = 5
-    __buttonsWidth  = 30
-    __buttonPadx    = 30
-    __buttonPady    = 15
-
-    def getButtonHeight(self):
+    def getBackGroundColorFont(self):
+        return self.__backgroundcolorFont
+    
+    def getFontColorConsole(self):
+        return self.__fontColorConsole
+    
+    def getFontText(self):
+        return self.__fontText
+    
+    def getButtonsHeight(self):
         return self.__buttonsHeight
     
     def getButtonWidth(self):
@@ -27,44 +54,6 @@ class StyleWindows:
     def getButtonPadY(self):
         return self.__buttonPady 
     
-    #-------------------------------------------------------------------
-    
-    __entryWidth = 30
-
-    def getEntryWidth(self):
-        return self.__entryWidth
-    
-    #-------------------------------------------------------------------
-
-    __backgroundcolorWidget = '#f0f8ff'
-    __backgroundcolorFont   = '#ffffff'
-    __fontColorConsole = '#000000'
-    __fontFamilyConsole = ('Consolas', '12', 'bold')  
-    __fontText = ('Arial', '10', 'bold')
-
-    def getBackGroundColorWidget(self):
-        return self.__backgroundcolorWidget
-    
-    def getBackGroundColorFont(self):
-        return self.__backgroundcolorFont
-    
-    def getFontColorConsole(self):
-        return self.__fontColorConsole
-    
-    def getFontFamilyConsole(self):
-        return self.__fontFamilyConsole
-    
-    def getFontText(self):
-        return self.__fontText
-    
-    #-------------------------------------------------------------------
-
-    __border = 3
-    __buttonsWidth = 18
-    __entryWidth = 25
-    __padY = 10
-    __padX = 5  
-
     def getBorder(self):
         return self.__border
     
@@ -80,14 +69,6 @@ class StyleWindows:
     def getPadX(self):
         return self.__padX
     
-    #-------------------------------------------------------------------
-
-    __configJson = 'config.json'
-    __white = 'colorWhite'
-    __black = 'colorBlack'
-    __colorDefault = 'colorDefault'
-    __fg_default = 'fg_default'
-
     def getWhite(self):
         return self.__white
     
@@ -95,13 +76,28 @@ class StyleWindows:
         return self.__black
     
     def getConfigJson(self):
-        return self.__configJson
+        return self.__configStyleJson
     
     def getColorDefault(self):
         return self.__colorDefault
     
     def getFgDefault(self):
         return self.__fg_default
+    
+    def getFontSize(self):
+        return self.__fontSize
+    
+    def getFontBold(self):
+        return self.__fontBold
+    
+    def getFontTextConsole(self):
+        return self.__fontTextConsole
+    
+    def getFontSizeConsole(self):
+        return self.__fontSizeConsole
+    
+    def getFontBoldConsole(self):
+        return self.__fontBoldConsole
     
     #-------------------------------------------------------------------
 
@@ -115,10 +111,27 @@ class StyleWindows:
             self.__styleConfig[self.getFgDefault()] = self.__styleConfig[self.getWhite()]
 
     __styleConfig = {
-        __colorDefault: f"{core.getJsonRegistered(__colorDefault, __configJson)}",
-        __fg_default: f"{core.getJsonRegistered(__fg_default, __configJson)}",
-        __white: f"{core.getJsonRegistered(__white, __configJson)}",
-        __black: f"{core.getJsonRegistered(__black, __configJson)}",
+        __colorDefault:          f"{core.getJsonRegistered(__colorDefault, __configStyleJson)}",
+        __fg_default:            f"{core.getJsonRegistered(__fg_default, __configStyleJson)}",
+        __white:                 f"{core.getJsonRegistered(__white, __configStyleJson)}",
+        __black:                 f"{core.getJsonRegistered(__black, __configStyleJson)}",
+        __border:                f"{core.getJsonRegistered(__border, __configStyleJson)}",
+        __buttonsWidth:          f"{core.getJsonRegistered(__buttonsWidth, __configStyleJson)}",
+        __buttonsHeight:         f"{core.getJsonRegistered(__buttonsHeight, __configStyleJson)}",
+        __buttonPadx:            f"{core.getJsonRegistered(__buttonPadx, __configStyleJson)}",
+        __buttonPady:            f"{core.getJsonRegistered(__buttonPady, __configStyleJson)}",
+        __entryWidth:            f"{core.getJsonRegistered(__entryWidth, __configStyleJson)}",
+        __padY:                  f"{core.getJsonRegistered(__padY, __configStyleJson)}",
+        __padX:                  f"{core.getJsonRegistered(__padX, __configStyleJson)}",
+        __backgroundcolorWidget: f"{core.getJsonRegistered(__backgroundcolorWidget, __configStyleJson)}",
+        __backgroundcolorFont:   f"{core.getJsonRegistered(__backgroundcolorFont, __configStyleJson)}",
+        __fontColorConsole:      f"{core.getJsonRegistered(__fontColorConsole, __configStyleJson)}",
+        __fontText:              f"{core.getJsonRegistered(__fontText, __configStyleJson)}",
+        __fontSize:              f"{core.getJsonRegistered(__fontSize, __configStyleJson)}",
+        __fontBold:              f"{core.getJsonRegistered(__fontBold, __configStyleJson)}",
+        __fontTextConsole:       f"{core.getJsonRegistered(__fontTextConsole, __configStyleJson)}",
+        __fontSizeConsole:       f"{core.getJsonRegistered(__fontSizeConsole, __configStyleJson)}",
+        __fontBoldConsole:       f"{core.getJsonRegistered(__fontBoldConsole, __configStyleJson)}",
     }
 
     def getColorWindowStandart(self):
@@ -170,10 +183,10 @@ class StyleWindows:
                 colorFgWingetStandart.append(colorWindow[self.getWhite()])
                 core.jsonRegistered(self.__styleConfig, self.getConfigJson())
                         
-            for key in registered_winget:
-                for winget in registered_winget[key]:
-                    winget.config(fg = colorFgWingetStandart[0])
-                    winget.configure(bg = colorWindowStandart[0])
+        for key in registered_winget:
+            for winget in registered_winget[key]:
+                winget.config(fg = colorFgWingetStandart[0])
+                winget.configure(bg = colorWindowStandart[0])
                 
     def update_window_colors(self, color):
         
