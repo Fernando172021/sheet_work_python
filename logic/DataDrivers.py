@@ -10,7 +10,6 @@ class DataDriver:
     __id_start_unload = "CHEGADA DESCARGA"
     __id_end_unload = "SAIDA DESCARGA"
 
-
     __data_state = {
             __id_name:         [],
             __id_start_load:   [],
@@ -35,31 +34,16 @@ class DataDriver:
     def clearDataBase(self):
             dataState = self.get_data_state()
             idName = self.get_id_state()
-            cd1 = list(dataState[idName[0]])
-            cd2 = list(dataState[idName[1]])
-            cd3 = list(dataState[idName[2]])
-            cd4 = list(dataState[idName[3]])
-            cd5 = list(dataState[idName[4]])
 
-            if len(dataState[idName[0]]) != 0:
-                for self.numberFrame in cd1:
-                    dataState[idName[0]].pop()
+            __processList = []
 
-            if len(dataState[idName[1]]) != 0:
-                for self.numberFrame in cd2:
-                    dataState[idName[1]].pop()
+            for num, x in enumerate(idName):
+                __processList.append(num)
 
-            if len(dataState[idName[2]]) != 0:
-                for self.numberFrame in cd3:
-                    dataState[idName[2]].pop()
-
-            if len(dataState[idName[3]]) != 0:
-                for self.numberFrame in cd4:
-                    dataState[idName[3]].pop()
-
-            if len(dataState[idName[4]]) != 0:
-                for self.numberFrame in cd5:
-                    dataState[idName[4]].pop()
+            if __processList != 0:
+                for num in __processList:
+                    if dataState[idName[num]] != []:
+                        dataState[idName[num]].clear()
 
     def saveSheetInDirectory(self,file):
         core = AppCore()

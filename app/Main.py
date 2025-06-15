@@ -13,12 +13,14 @@ class Main:
 
         iconImage = styleWindows.getIconImage()
         colorWindowStandart = styleWindows.getColorWindowStandart()
+        fgColor = styleWindows.getFgWingetStandart()
         fontText = styleWindows.getFontText()
         buttonsWidth = styleWindows.getButtonsWidth()
         buttonsHeight = styleWindows.getButtonHeight()
         border = styleWindows.getBorder()
         buttonPadx = styleWindows.getButtonPadX()
         buttonPady = styleWindows.getButtonPadY()
+        styleWindows.modeWinget(colorWindowStandart)
 
         checkColorWhite = styleWindows.checkColorWhite
         checkColorDark = styleWindows.checkColorDark
@@ -31,6 +33,8 @@ class Main:
         register_window('Main', self.Window)
 
         self.titleH1 = Label(self.Window, text='GERADOR DE PLANILHAS')
+        self.titleH1.config(bg = colorWindowStandart)
+        self.titleH1.config(fg = fgColor)
         self.titleH1['font'] = fontText
         self.titleH1.grid(column= 10, row= 0, columnspan= 30, padx= 5, pady= 5)
         register_winget('Main', self.titleH1)

@@ -1,3 +1,5 @@
+import orjson
+
 class AppCore:
     __DriverSchedule = 'DriverSchedule'
     __SingIn = 'SingIn' 
@@ -59,3 +61,26 @@ class AppCore:
         for key in self.__registered_winget[id]:
             key = None
             self.__registered_winget[id].clear()
+
+    def jsonRegistered(self, key, dictInput):
+        with open("config.json", "wb") as file:
+            jsonDump = orjson.dumps(dictInput)
+            file.write(jsonDump)
+
+    def getJsonRegistered(self, key):
+        try:
+            with open("config.json", "rb") as file:
+                data = orjson.loads(file.read())
+                return data[f"{key}"]
+            
+        except KeyError:
+            print(f"Key '{key}' not found in JSON file.")
+            return None
+        
+        except FileNotFoundError:
+            print("JSON file not found.")
+            return None
+        
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return None

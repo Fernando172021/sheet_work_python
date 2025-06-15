@@ -70,7 +70,6 @@ class DataPerson:
             else:
                 print('PRENENCHA OS CAMPOS!')
 
-
     def clearData(self):
         core = AppCore()
         registerInput = core.getRegisteredInput()

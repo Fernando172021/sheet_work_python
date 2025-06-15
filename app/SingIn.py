@@ -24,6 +24,7 @@ class Sing_in:
 
         iconImage = styleWindows.getIconImage()
         colorWindowStandart = styleWindows.getColorWindowStandart()
+        fgColor = styleWindows.getFgWingetStandart()
         fontText = styleWindows.getFontText()
         buttonsWidth = styleWindows.getButtonsWidth()
         border = styleWindows.getBorder()
@@ -43,11 +44,15 @@ class Sing_in:
         register_window('SingIn', self.window)
 
         self.label0 = Label(self.window, text= 'INSIRA OS SEUS DADOS A BAIXO', width= 40)
+        self.label0.config(bg = colorWindowStandart)
+        self.label0.config(fg = fgColor)
         self.label0['font'] = fontText
         self.label0.grid(row= 0, column= 1, padx= padX, pady= padY)
         register_winget('SingIn', self.label0)
 
         self.label1 = Label(self.window, text= id_cadastros[0], width= 40)
+        self.label1.config(bg = colorWindowStandart)
+        self.label1.config(fg = fgColor)
         self.label1['font'] = fontText
         self.label1.grid(row= 1, column= 0, padx= padX, pady= padY)
         register_winget('SingIn', self.label1)
@@ -58,6 +63,8 @@ class Sing_in:
         register_inputs('SingIn', self.input1)
 
         self.label2 = Label(self.window, text= id_cadastros[1], width= 40)
+        self.label2.config(bg = colorWindowStandart)
+        self.label2.config(fg = fgColor)
         self.label2['font'] = fontText
         self.label2.grid(row= 1, column= 1, padx= padX, pady= padY)
         register_winget('SingIn', self.label2)
@@ -68,6 +75,8 @@ class Sing_in:
         register_inputs('SingIn', self.input2)
 
         self.label3 = Label(self.window, text= id_cadastros[2], width= 40)
+        self.label3.config(bg = colorWindowStandart)
+        self.label3.config(fg = fgColor)
         self.label3['font'] = fontText
         self.label3.grid(row= 1, column= 2, padx= padX, pady= padY)
         register_winget('SingIn', self.label3)
@@ -78,6 +87,8 @@ class Sing_in:
         register_inputs('SingIn', self.input3)
 
         self.label4 = Label(self.window, text= id_cadastros[3], width= 40)
+        self.label4.config(bg = colorWindowStandart)
+        self.label4.config(fg = fgColor)
         self.label4['font'] = fontText
         self.label4.grid(row= 3, column= 0, padx= padX, pady= padY)
         register_winget('SingIn', self.label4)
@@ -88,6 +99,8 @@ class Sing_in:
         register_inputs('SingIn', self.input4)
 
         self.label5 = Label(self.window, text= id_cadastros[4], width= 40)
+        self.label5.config(bg = colorWindowStandart)
+        self.label5.config(fg = fgColor)
         self.label5['font'] = fontText
         self.label5.grid(row= 3, column= 1, padx= padX, pady= padY)
         register_winget('SingIn', self.label5)
@@ -98,6 +111,8 @@ class Sing_in:
         register_inputs('SingIn', self.input5)
 
         self.label6 = Label(self.window, text= id_cadastros[5], width= 40)
+        self.label6.config(bg = colorWindowStandart)
+        self.label6.config(fg = fgColor)
         self.label6['font'] = fontText
         self.label6.grid(row= 3, column= 2, padx= padX, pady= padY)
         register_winget('SingIn', self.label6)
@@ -108,6 +123,8 @@ class Sing_in:
         register_inputs('SingIn', self.input6)
 
         self.label7 = Label(self.window, text= id_cadastros[6], width= 40)
+        self.label7.config(bg = colorWindowStandart)
+        self.label7.config(fg = fgColor)
         self.label7['font'] = fontText
         self.label7.grid(row= 5, column= 0, padx= padX, pady= padY)
         register_winget('SingIn', self.label7)
@@ -118,6 +135,8 @@ class Sing_in:
         register_inputs('SingIn', self.input7)
 
         self.label8 = Label(self.window, text= id_cadastros[7], width= 40)
+        self.label8.config(bg = colorWindowStandart)
+        self.label8.config(fg = fgColor)
         self.label8['font'] = fontText
         self.label8.grid(row= 5, column= 1, padx= padX, pady= padY)
         register_winget('SingIn', self.label8)
@@ -128,6 +147,8 @@ class Sing_in:
         register_inputs('SingIn', self.input8)
 
         self.label9 = Label(self.window, text= id_cadastros[8], width= 40)
+        self.label9.config(bg = colorWindowStandart)
+        self.label9.config(fg = fgColor)
         self.label9['font'] = fontText
         self.label9.grid(row= 5, column= 2, padx= padX, pady= padY)
         register_winget('SingIn', self.label9)
@@ -138,6 +159,8 @@ class Sing_in:
         register_inputs('SingIn', self.input9)
 
         self.label10 = Label(self.window, text= id_cadastros[9], width= 40)
+        self.label10.config(bg = colorWindowStandart)
+        self.label10.config(fg = fgColor)
         self.label10['font'] = fontText
         self.label10.grid(row= 7, column= 0, padx= padX, pady= padY)
         register_winget('SingIn', self.label10)
@@ -148,6 +171,8 @@ class Sing_in:
         register_inputs('SingIn', self.input10)
 
         self.label11 = Label(self.window, text= id_cadastros[10], width= 40)
+        self.label11.config(bg = colorWindowStandart)
+        self.label11.config(fg = fgColor)
         self.label11['font'] = fontText
         self.label11.grid(row= 7, column= 1, padx= padX, pady= padY)
         register_winget('SingIn', self.label11)
@@ -158,6 +183,8 @@ class Sing_in:
         register_inputs('SingIn', self.input11)
 
         self.label12 = Label(self.window, text= id_cadastros[11], width= 40)
+        self.label12.config(bg = colorWindowStandart)
+        self.label12.config(fg = fgColor)
         self.label12['font'] = fontText
         self.label12.grid(row= 7, column= 2, padx= padX, pady= padY)
         register_winget('SingIn', self.label12)
@@ -168,6 +195,8 @@ class Sing_in:
         register_inputs('SingIn', self.input12)
 
         self.labelText = Label(self.window, text= 'Para PESQUISAR / DELETAR digite o Nome aperte CADASTRAR e em seguida as opções anteriores.')
+        self.labelText.config(bg = colorWindowStandart)
+        self.labelText.config(fg = fgColor)
         self.labelText['font'] = fontText
         self.labelText.grid(row= 9, column= 1, padx= padX, pady= padY)
 

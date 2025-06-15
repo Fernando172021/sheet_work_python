@@ -17,6 +17,7 @@ class DriverSchedule:
 
             iconImage = styleWindows.getIconImage()
             colorWindowStandart = styleWindows.getColorWindowStandart()
+            fgColor = styleWindows.getFgWingetStandart()
             fontText = styleWindows.getFontText()
             buttonsWidth = styleWindows.getButtonsWidth()
             border = styleWindows.getBorder()
@@ -34,11 +35,15 @@ class DriverSchedule:
             register_window('DriverSchedule', self.window) # Registro da da pagina
 
             self.word_init = Label(self.window, text= 'Insira os dados da operação abaixo', width= 40)
+            self.word_init.config(bg = colorWindowStandart)
+            self.word_init.config(fg = fgColor)
             self.word_init['font'] = fontText
             self.word_init.grid(column = 0, columnspan= 1, row = 0, padx= padX, pady= padY)
             register_winget('DriverSchedule', self.word_init)
 
             self.inputLabel = Label(self.window, text= listName[0], bg= backgroundcolorFont)
+            self.inputLabel.config(bg = colorWindowStandart)
+            self.inputLabel.config(fg = fgColor)
             self.inputLabel['font'] = fontText
             self.inputLabel.grid(column= 0, row= 3)
             register_winget('DriverSchedule', self.inputLabel)
@@ -48,6 +53,8 @@ class DriverSchedule:
             register_input('DriverSchedule', self.inputValue)
 
             self.inputLabel2 = Label(self.window, text= listName[1],  bg= backgroundcolorFont)
+            self.inputLabel2.config(bg = colorWindowStandart)
+            self.inputLabel2.config(fg = fgColor)
             self.inputLabel2['font'] = fontText
             self.inputLabel2.grid(column= 0, row= 5)
             register_winget('DriverSchedule', self.inputLabel2)
@@ -57,6 +64,8 @@ class DriverSchedule:
             register_input('DriverSchedule', self.inputValue2)
 
             self.inputLabel3 = Label(self.window, text= listName[2], bg= backgroundcolorFont)
+            self.inputLabel3.config(bg = colorWindowStandart)
+            self.inputLabel3.config(fg = fgColor)
             self.inputLabel3['font'] = fontText
             self.inputLabel3.grid(column= 0, row= 7)
             register_winget('DriverSchedule', self.inputLabel3)
@@ -66,6 +75,8 @@ class DriverSchedule:
             register_input('DriverSchedule', self.inputValue3)
 
             self.inputLabel4 = Label(self.window, text= listName[3], bg= backgroundcolorFont)
+            self.inputLabel4.config(bg = colorWindowStandart)
+            self.inputLabel4.config(fg = fgColor)
             self.inputLabel4['font'] = fontText
             self.inputLabel4.grid(column= 0, row= 9)
             register_winget('DriverSchedule', self.inputLabel4)
@@ -75,6 +86,8 @@ class DriverSchedule:
             register_input('DriverSchedule', self.inputValue4)
 
             self.inputLabel5 = Label(self.window, text= listName[4], bg= backgroundcolorFont)
+            self.inputLabel5.config(bg = colorWindowStandart)
+            self.inputLabel5.config(fg = fgColor)
             self.inputLabel5['font'] = fontText
             self.inputLabel5.grid(column= 0, row= 11)
             register_winget('DriverSchedule', self.inputLabel5)
@@ -94,6 +107,8 @@ class DriverSchedule:
             self.button2['font'] = fontText
 
             self.end_word = Label(self.window, text='', bg= backgroundcolorFont)
+            self.end_word.config(bg = colorWindowStandart)
+            self.end_word.config(fg = fgColor)
             self.end_word['font'] = fontText
             self.end_word.grid(column= 0, row= 15, pady= padY)
             register_winget('DriverSchedule', self.end_word)

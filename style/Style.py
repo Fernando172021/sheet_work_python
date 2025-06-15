@@ -1,6 +1,8 @@
 from logic.AppCore import AppCore
 
 class StyleWindows:
+    core = AppCore()
+
     __iconImage = 'midia/favicon.ico'
 
     def getIconImage(self):
@@ -80,48 +82,102 @@ class StyleWindows:
     
     #-------------------------------------------------------------------
 
-    __color_window = {
-        'White': ['#ffffff'],
-        'Dark':  ['#000000'],
+    __white = 'White'
+    __dark = 'Dark'
+
+    def getStandartWhite(self):
+        return self.__white
+    
+    def getStandartDark(self):
+        return self.__dark
+    
+    __color = {
+        __white: ['#ffffff'],
+        __dark:  ['#000000'],
     }
 
     def getColorWindow(self):
-        return self.__color_window
-
-    def getColorWindowStandart(self):
-        colorWindowStandart = self.getColorWindow()['White']
-        return colorWindowStandart
+        return self.__color
     
     #-------------------------------------------------------------------
 
-    def update_window_colors(self, color):
+    def updateColorWindow(self, color):
+        self.__color_window["colorDefault"] = self.__color[color][0]
+
+    def updateFgWinget(self, color):
+        if color == 'White':
+            self.__color_window["fg_default"] = self.__color["Dark"][0]
+        elif color == 'Dark':
+            self.__color_window["fg_default"] = self.__color["White"][0]
+
+    __color_window = {
+        "colorDefault": f"{core.getJsonRegistered('colorDefault')}",
+        "fg_default": f"{core.getJsonRegistered('fg_default')}"
+    }
+
+    def getColorWindowStandart(self):
+        colorWindowStandart = self.__color_window["colorDefault"]
+        return colorWindowStandart
+    
+    def getFgWingetStandart(self):
+        fgWingetStandart = self.__color_window["fg_default"]
+        return fgWingetStandart
+    
+    def modeColor(self, color):
         core = AppCore()
         registered_windows = core.getRegisteredWindow()
-        registered_winget = core.getRegisteredWinget()
         colorWindow = self.getColorWindow()
-    
-        global colorWindowStandart
+        colorWindowStandart = []
 
         for mode in colorWindow.keys():
-            if mode and color == 'White':
-                colorWindowStandart = colorWindow['White']
+            if mode and color == 'White':  
+                colorWindowStandart.append(colorWindow['White'])
+                core.jsonRegistered('colorDefault', self.__color_window)
+            
             elif mode and color == 'Dark':
-                colorWindowStandart = colorWindow['Dark']
-        
+                colorWindowStandart.append(colorWindow['Dark'])
+                core.jsonRegistered('colorDefault', self.__color_window)
+            
             for key in registered_windows:
                 for window in registered_windows[key]:
-                    window.configure(bg = colorWindowStandart)
+                    window.configure(bg = colorWindowStandart[0])
+    
+    def modeWinget(self, color):
+        core = AppCore()
+        registered_winget = core.getRegisteredWinget()
+        colorWindow = self.getColorWindow()
+        self.updateFgWinget(color)
+        colorWindowStandart = []
+        colorFgWingetStandart = []
 
+        for mode in colorWindow.keys():
+            if mode and color == 'White': 
+                        colorWindowStandart.append(colorWindow['White'])
+                        colorFgWingetStandart.append(colorWindow['Dark'])
+                        core.jsonRegistered('fg_default', self.__color_window)
+            
+            if mode and color == 'Dark':
+                        colorWindowStandart.append(colorWindow['Dark'])
+                        colorFgWingetStandart.append(colorWindow['White'])
+                        core.jsonRegistered('fg_default', self.__color_window)
+                        
         for key in registered_winget:
                 for winget in registered_winget[key]:
-                    winget.configure(bg = colorWindowStandart)
-                    if color == 'White': 
-                        winget.config(fg = '#000000')
-                    if color == 'Dark':
-                        winget.config(fg = '#ffffff')
+                    winget.config(fg = colorFgWingetStandart[0])
+                    winget.configure(bg = colorWindowStandart[0])
+
+                
+    def update_window_colors(self, color):
+        
+        self.updateColorWindow(color)
+        self.modeColor(color)
+        self.modeWinget(color)
 
     def checkColorWhite(self):
         self.update_window_colors('White')
+        
+        #self.getColorWindowStandart('White')
 
     def checkColorDark(self):
         self.update_window_colors('Dark')
+        #self.getColorWindowStandart('Dark')
