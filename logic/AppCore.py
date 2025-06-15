@@ -62,14 +62,14 @@ class AppCore:
             key = None
             self.__registered_winget[id].clear()
 
-    def jsonRegistered(self, key, dictInput):
-        with open("config.json", "wb") as file:
+    def jsonRegistered(self, dictInput, jsonFile):
+        with open(jsonFile, "wb") as file:
             jsonDump = orjson.dumps(dictInput)
             file.write(jsonDump)
 
-    def getJsonRegistered(self, key):
+    def getJsonRegistered(self, key, jsonFile):
         try:
-            with open("config.json", "rb") as file:
+            with open(jsonFile, "rb") as file:
                 data = orjson.loads(file.read())
                 return data[f"{key}"]
             
