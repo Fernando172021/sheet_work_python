@@ -1,7 +1,7 @@
 db_config = {
         'host': 'localhost',
         'user': 'ADM_FER',
-        'password': 'Venom@326$s21',
+        'password': '123456',
         'database': 'corp',
         'table_user': 'USUARIO'
     }
