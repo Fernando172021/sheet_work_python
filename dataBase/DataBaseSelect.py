@@ -4,7 +4,9 @@ import pymysql
 
 
 class DataBaseSelect:
+
     def __init__(self):
+
         con = pymysql.connect(
             host= db_config['host'],
             user= db_config['user'],
@@ -14,11 +16,14 @@ class DataBaseSelect:
 
         try:
             self.cursor = con.cursor()
+            self.DataPerson = DataPerson()
+
+            self.DataPerson.insert()
             self.cursor.execute(self.select_data_user())
             con.commit()
             
             print(self.cursor.fetchall())
-        
+
         except TypeError as a:
             print(f'Listas vazias. Preencha todas as informações!: {a}\n')
             con.rollback()
@@ -33,13 +38,19 @@ class DataBaseSelect:
             print('Conexão encerrada!')
 
     def select_data_user(self):
+        self.DataPerson = DataPerson()
+        self.clearData = DataPerson.clearData
+
         try:
-            personData = DataPerson()
-            dataSelect = personData.get_data_for_singup()
-            idCadastro = personData.get_id_cadastros()
+            dataSelect = DataPerson.get_data_for_singup(self.DataPerson)
+            idCadastro = DataPerson.get_id_cadastros(self.DataPerson)
 
             select_command = f'SELECT * FROM {db_config['table_user']} WHERE NOME = "{dataSelect[idCadastro[0]][0]}";'
             return select_command
         
         except IndexError as x:
             print(f'Listas vazias. Preencha todas as informações! {x}\n')
+
+        finally:
+            print(type(select_command))
+            self.clearData(self.DataPerson)

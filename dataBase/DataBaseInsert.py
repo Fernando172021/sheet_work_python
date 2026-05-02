@@ -2,7 +2,6 @@ from dataBase.DataBaseConfig import db_config
 from logic.DataPerson import DataPerson
 import pymysql
 
-
 class DataBaseInsert:
     def __init__(self):   
         con = pymysql.connect(
@@ -32,6 +31,12 @@ class DataBaseInsert:
             print('Conexão encerrada!')
 
     def insert_data_user(self):
+        personData = DataPerson()
+        clearData = personData.clearData
+        insertData = personData.insert
+
+        insertData()
+        
         try:
             personData = DataPerson()
             dataSingUp = personData.get_data_for_singup()
@@ -43,3 +48,5 @@ class DataBaseInsert:
         
         except IndexError as x:
             print(f'Para inserir informações  no BD cadastre as mesmas antes! {x}\n')
+
+        clearData()

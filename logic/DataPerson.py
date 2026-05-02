@@ -52,23 +52,6 @@ class DataPerson:
         listDataUser[name].append(registerInput[key][num].get())
 
     # Acima metodos Get n' Set
-    
-    def insert(self):
-        core = AppCore()
-        registerInput = core.getRegisteredInput()
-        key = core.getSingIn()
-        __listDataUser = self.get_data_for_singup()
-
-        for id in __listDataUser:
-            self.processList.append(id)
-        
-        for i, id in enumerate(registerInput[key]):
-            if registerInput[key][i].get() != '':
-                self.set_data_for_singup(self.processList[i], key, i)
-                print(f'{__listDataUser[self.processList[i]][0]} --> Pré Carregado\n')
-                #print(self.processList[i], key)
-            else:
-                print('PRENENCHA OS CAMPOS!')
 
     def clearData(self):
         core = AppCore()
@@ -86,4 +69,21 @@ class DataPerson:
         for num, x in enumerate(registerInput[key]):
             registerInput[key][num].delete(0, 'end')
         
-        print('INSIRA TODAS AS INSFORMAÇÕES\nINTERFACE LIMPA\n')
+        print('INTERFACE LIMPA')
+    
+    def insert(self):
+        core = AppCore()
+        registerInput = core.getRegisteredInput()
+        key = core.getSingIn()
+        __listDataUser = self.get_data_for_singup()
+
+        for id in __listDataUser:
+            self.processList.append(id)
+        
+        for i, id in enumerate(registerInput[key]):
+            if registerInput[key][i].get() != '':
+                self.set_data_for_singup(self.processList[i], key, i)
+                print(f'{__listDataUser[self.processList[i]][0]} --> Pré Carregado\n')
+                #print(self.processList[i], key)
+            else:
+                print('PRENENCHA OS CAMPOS!')

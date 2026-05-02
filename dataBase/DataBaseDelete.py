@@ -32,6 +32,8 @@ class DataBaseDelete:
             print('Conexão encerrada!')
     
     def delete_data_user(self):
+        personData = DataPerson()
+        clearData = personData.clearData
         try:
             personData = DataPerson()
             dataDelete = personData.get_data_for_singup()
@@ -43,3 +45,5 @@ class DataBaseDelete:
         
         except IndexError as x:
             print(f'Para deletar cadastre as informações do registro! {x}\n')
+
+        clearData()
